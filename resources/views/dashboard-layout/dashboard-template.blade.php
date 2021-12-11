@@ -12,13 +12,13 @@
     <title>DreamSpace Leave Manegement</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('dashboard-template')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{asset('dashboard-template')}}/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-text mx-3">DreamSpace Academy</div>
             </a>
 
@@ -49,25 +49,25 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Staff Management</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-database"></i>
                     <span>Leave Management</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Settings</span></a>
             </li>
-          
+
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-power-off"></i>
                     <span>Logout</span></a>
             </li>
@@ -81,7 +81,7 @@
             </div>
 
             <!-- Sidebar Message -->
-           
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -107,7 +107,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-3 d-none d-lg-inline" style="color: white; font-size: 18px; font-weight: bold;">Admin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="{{asset('dashboard-template')}}/img/undraw_profile.svg">
                             </a>
                         </li>
                     </ul>
@@ -118,7 +118,9 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    
+
+                   @yield('dashboard-container-content')
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -131,7 +133,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span style="color: white; font-size: 16px;">
-                            &copy; Copyright DreamSpace Academy | All rights reserved | Co-created by <a style="color:#56509f; font-weight:bold" href="https://www.linkedin.com/in/gunarakulan-gunaretnam-161119156/" target="_blank">Gunarakulan</a>
+                            &copy; Copyright DreamSpace Academy | All rights reserved | Co-created by <a style="color:#56509f; font-weight:bold;" href="https://www.linkedin.com/in/gunarakulan-gunaretnam-161119156/" target="_blank">Gunarakulan</a>
                         </span>
                     </div>
                 </div>
@@ -170,21 +172,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('dashboard-template')}}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{asset('dashboard-template')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('dashboard-template')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{asset('dashboard-template')}}/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="{{asset('dashboard-template')}}/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset('dashboard-template')}}/js/demo/chart-area-demo.js"></script>
+    <script src="{{asset('dashboard-template')}}/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

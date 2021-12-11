@@ -11,4 +11,10 @@ class PageController extends Controller
       return view("login-page");
 
   }
+
+  public function ViewHomePageController(){
+
+      return view("dashboard-content/home-page");
+
+  }
 }
