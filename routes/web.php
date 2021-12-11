@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,8 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/',[PageController::class, 'ViewLoginPageController']);
+
+Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);
+
+
+?>
