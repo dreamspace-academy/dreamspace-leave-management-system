@@ -3,7 +3,7 @@
 @section('dashboard-admin-content')
 
 
-WElcome
+Homepage
 
 
 @endsection

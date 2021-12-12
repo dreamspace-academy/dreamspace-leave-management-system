@@ -34,6 +34,25 @@ class PageController extends Controller
        }
   }
 
+  public function ViewStaffManagementController(){
+
+       $session_type = Session::get('Session_Type');
+       $session_value = Session::get('Session_Value');
+
+       if($session_type == "Admin"){
+
+         return view("admin-dashboard-content/staff-management");
+
+       }else{
+
+         return Redirect::to("/");
+
+       }
+
+  }
+
+
+
 
 
 
