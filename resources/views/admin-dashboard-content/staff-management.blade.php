@@ -132,7 +132,7 @@
                         <td>{{$data->email}}</td>
                         <td>{{$data->phone_number}}</td>
                         <td>{{$data->position}}</td>
-                        <td><a class="btn btn-success" href="#">Edit</a> <a class="btn btn-danger confirmation" href="#">Delete</a></td>
+                        <td><a class="btn btn-success" href="#">Edit</a> <a class="btn btn-danger confirmation" href="www.google.lk">Delete</a></td>
                     </tr>
 
                 @endforeach
@@ -153,6 +153,11 @@
 
     window.onload=function(){
       $(".nav-item:eq(1)").addClass("active");
+
+      $('.confirmation').on('click', function () {
+          return confirm('Are you sure to delete?');
+      });
+      
     }
 
 </script>
