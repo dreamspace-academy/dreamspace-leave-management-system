@@ -53,13 +53,15 @@
         <h3 class="panel-title" style="text-align:center;">Edit Staffs</h3>
         <br>
 
-        <form action="insert-staff-data" method="POST">
+        <form action="/edit-staff-data" method="POST">
+
           {{ csrf_field() }}
+
           <div class="form-row">
 
             <div class="col-md-4 mb-3">
               <label for="first_name">First Name</label>
-              <input type="text" class="form-control" id="first_name" name="firstname" placeholder="Enter First Name" value="{{$staff_data[0]->firstname}}" required>
+              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" value="{{$staff_data[0]->firstname}}" required>
             </div>
 
             <div class="col-md-4 mb-3">
@@ -88,7 +90,11 @@
             </div>
 
           </div>
+
+          <input type="hidden" name="auto_id" value="{{$staff_data[0]->auto_id}}" />
+
           <input class="btn btn-lg btn-success float-right" value="Update" type="submit">
+
         </form>
 
       </div>

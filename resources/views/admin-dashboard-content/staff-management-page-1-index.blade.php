@@ -55,7 +55,7 @@
         <h3 class="panel-title" style="text-align:center;">Register Staffs</h3>
         <br>
 
-        <form action="insert-staff-data" method="POST">
+        <form action="/insert-staff-data" method="POST">
           {{ csrf_field() }}
           <div class="form-row">
 
