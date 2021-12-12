@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Redirect;
+use Session;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -37,9 +39,35 @@ class LoginController extends Controller
        if($real_username != "" && $real_password != "" && $real_account_type != ""){
 
 
+         if($user_entered_username == $real_username && Hash::check($user_entered_password, $real_password)){
+
+           if($real_account_type == "admin"){
+
+             Session::put('Session_Type', 'Admin');
+             Session::put('Session_Value', $real_username);
+
+             return Redirect::to("/home-page");
+
+           }else if($real_account_type == "staff"){
+
+             Session::put('Session_Type', 'Staff');
+             Session::put('Session_Value', $real_username);
+
+             return Redirect::to("/home-page");
+
+           }
+
+        }else{
+
+          return Redirect::to("/")->withErrors(['The username or password is incorrect.']);
+
+        }
+
+
+
        }else{
 
-         return Redirect::to("/")->withErrors(['The username or password is incorrect.']);
+         return Redirect::to("/")->withErrors(['Sorry, no account found for this credentials']);
        }
 
        echo $real_password." ".$real_password." ".$real_account_type;
