@@ -36,4 +36,6 @@ Route::post('/update-staff-data',[DatabaseController::class, 'UpdateStaffData'])
 
 Route::get('/view-settings-index',[PageController::class, 'ViewSettingsPageContoller']);
 
+Route::post('/change-username',[DatabaseController::class, 'ChangeUsername']);
+
 ?>

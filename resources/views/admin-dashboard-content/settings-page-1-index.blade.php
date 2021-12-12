@@ -3,12 +3,58 @@
 @section('dashboard-admin-content')
 
 
+@if($errors->any())
+  @foreach ($errors->all() as $error)
+      <div style="background-color:#FE6500;" id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
+          <strong style="color:white;">{!!$error!!}</strong>
+          <button type="button" style="color:white;" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="color:white;" >&times;</span>
+          </button>
+      </div>
+
+      <script>
+
+        window.onload=function(){
+
+          $("#errorBox").delay(3000).fadeOut("slow");
+
+        }
+
+      </script>
+
+  @endforeach
+@endif
+
+
+@if(session()->has('message'))
+
+    <div id="successBox" style="text-align:center;margin-top:20px;" class="alert alert-success col-md-12 alert-dismissible fade show" role="alert">
+        <strong> {{ session()->get('message') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <script>
+
+        setTimeout(
+        function()
+        {
+            $("#successBox").delay(3000).fadeOut("slow");
+
+        }, 1000);
+
+    </script>
+
+@endif
+
+
 <div class="card">
     <div class="card-body">
       <h3 class="panel-title" style="text-align:center;">Change Username</h3>
       <br>
 
-      <form action="/insert-staff-data" method="POST">
+      <form action="/change-username" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">
@@ -21,7 +67,7 @@
         <div class="form-group row">
           <label for="password" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-8">
-            <input type="password" class="form-control" id="password" placeholder="Password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
           </div>
         </div>
 
