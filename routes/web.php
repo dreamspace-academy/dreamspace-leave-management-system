@@ -30,4 +30,6 @@ Route::post('/insert-staff-data',[DatabaseController::class, 'InsertStaffData'])
 
 Route::get('/delete-staff-data/{auto_id}',[DatabaseController::class, 'DeleteStaffData']);
 
+Route::get('/staff-management-edit/{auto_id}',[PageController::class, 'ViewStaffManagementEditController']);
+
 ?>

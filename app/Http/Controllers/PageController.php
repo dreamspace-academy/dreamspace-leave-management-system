@@ -52,9 +52,22 @@ class PageController extends Controller
 
   }
 
+  public function ViewStaffManagementEditController($auto_id){
 
+       $session_type = Session::get('Session_Type');
+       $session_value = Session::get('Session_Value');
 
+       if($session_type == "Admin"){
 
+         $staff_data = DB::table('staff_data')->where("auto_id", $auto_id )->get(); // Get staff data.
+         return view("admin-dashboard-content/staff-management-page-2-edit")->with('staff_data', $staff_data); //Send staff data with it.
 
+       }else{
+
+         return Redirect::to("/");
+
+       }
+
+  }
 
 }
