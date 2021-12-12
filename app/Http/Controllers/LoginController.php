@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
+use Redirect;
 
 class LoginController extends Controller
 {
@@ -27,10 +28,18 @@ class LoginController extends Controller
 
         foreach($user as $u){
 
-         $real_username     =     $u->username;
-         $real_password     =     $u->password;
-         $real_account_type =     $u->account_type;
+           $real_username     =     $u->username;
+           $real_password     =     $u->password;
+           $real_account_type =     $u->account_type;
 
+       }
+
+       if($real_username != "" && $real_password != "" && $real_account_type != ""){
+
+
+       }else{
+
+         return Redirect::to("/")->withErrors(['The username or password is incorrect.']);
        }
 
        echo $real_password." ".$real_password." ".$real_account_type;
