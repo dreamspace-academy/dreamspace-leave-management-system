@@ -132,7 +132,7 @@
                         <td>{{$data->email}}</td>
                         <td>{{$data->phone_number}}</td>
                         <td>{{$data->position}}</td>
-                        <td><a class="btn btn-success" href="#">Edit</a> <a class="btn btn-danger confirmation" href="www.google.lk">Delete</a></td>
+                        <td><a class="btn btn-success" href="#">Edit</a> <a class="btn btn-danger confirmation" href="/delete-staff-data/{{$data->auto_id}}">Delete</a></td>
                     </tr>
 
                 @endforeach
@@ -157,7 +157,7 @@
       $('.confirmation').on('click', function () {
           return confirm('Are you sure to delete?');
       });
-      
+
     }
 
 </script>

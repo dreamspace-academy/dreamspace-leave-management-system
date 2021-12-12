@@ -43,6 +43,27 @@ class DatabaseController extends Controller
       }
 
     }
+
+    public function DeleteStaffData($auto_id){
+
+     $session_type = Session::get('Session_Type');
+
+     if($session_type == "Admin"){
+
+
+         if(DB::table('staff_data')->where('auto_id', '=', $auto_id)->delete()){
+
+             return redirect()->back()->with('message', 'Deletion is Successful.');
+         }
+
+     }else{
+
+         return Redirect::to("/");
+
+     }
+
+ }
+
 }
 
 ?>
