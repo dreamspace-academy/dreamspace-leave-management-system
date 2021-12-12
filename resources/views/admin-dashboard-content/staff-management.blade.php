@@ -101,6 +101,7 @@
       </div>
 </div>
 
+<br>
 
 <div class="card">
       <div class="card-body">
@@ -120,18 +121,22 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td><a class="btn btn-success">Edit<a> <a class="btn btn-danger">Delete<a></td>
+                @foreach ($staff_data as $key => $data)
 
-                </tr>
+                    <tr>
+                        <th scope="row">{{ $key + 1 }}</th>
+                        <td>{{$data->staff_id}}</td>
+                        <td>{{$data->firstname}}</td>
+                        <td>{{$data->lastname}}</td>
+                        <td>{{$data->dob}}</td>
+                        <td>{{$data->email}}</td>
+                        <td>{{$data->phone_number}}</td>
+                        <td>{{$data->position}}</td>
+                        <td><a class="btn btn-success" href="#">Edit</a> <a class="btn btn-danger confirmation" href="#">Delete</a></td>
+                    </tr>
+
+                @endforeach
+
               </tbody>
           </table>
 
