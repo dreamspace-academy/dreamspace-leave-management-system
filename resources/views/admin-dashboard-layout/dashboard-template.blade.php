@@ -119,7 +119,7 @@
                 <div class="container-fluid">
 
 
-                   @yield('dashboard-container-content')
+                   @yield('dashboard-admin-content')
 
 
                 </div>

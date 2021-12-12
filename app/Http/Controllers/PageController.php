@@ -21,11 +21,11 @@ class PageController extends Controller
 
        if($session_type == "Admin"){
 
-         return view("dashboard-content/home-page");
+         return view("admin-dashboard-content/home-page");
 
        }else if($session_type == "Staff"){
 
-         return view("dashboard-content/home-page");
+
 
        }else{
 
@@ -34,12 +34,7 @@ class PageController extends Controller
        }
   }
 
-  public function HandleLoginContoller(){
 
-    Session::flush();
-    return Redirect('/');
-
-  }
 
 
 }
