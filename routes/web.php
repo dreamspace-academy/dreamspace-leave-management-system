@@ -38,4 +38,6 @@ Route::get('/view-settings-index',[PageController::class, 'ViewSettingsPageConto
 
 Route::post('/change-username',[DatabaseController::class, 'ChangeUsername']);
 
+Route::post('/change-password',[DatabaseController::class, 'ChangePassword']);
+
 ?>

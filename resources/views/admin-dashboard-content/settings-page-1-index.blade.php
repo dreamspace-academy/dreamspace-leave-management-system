@@ -90,27 +90,27 @@
       <h3 class="panel-title" style="text-align:center;">Change Password</h3>
       <br>
 
-      <form action="/insert-staff-data" method="POST">
+      <form action="/change-password" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">
           <label for="current_password" class="col-sm-2 col-form-label">Current Password</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="current_password" name="current_password" placeholder="Current Password" required>
+            <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Current Password" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="new_password" class="col-sm-2 col-form-label">New Password</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="new_password" name="new_password" placeholder="New Password" required>
+            <input type="password" class="form-control" id="new_password" name="new_password" placeholder="New Password" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="confirm_password" class="col-sm-2 col-form-label">Confirm Password</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
           </div>
         </div>
 
