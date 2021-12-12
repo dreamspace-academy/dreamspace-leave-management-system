@@ -34,7 +34,7 @@ class PageController extends Controller
        }
   }
 
-  public function ViewStaffManagementController(){
+  public function ViewStaffManagementIndexController(){
 
        $session_type = Session::get('Session_Type');
        $session_value = Session::get('Session_Value');

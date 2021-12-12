@@ -49,7 +49,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/staff-management">
+                <a class="nav-link" href="/staff-management-index">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Staff Management</span></a>
             </li>

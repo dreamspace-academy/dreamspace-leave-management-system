@@ -24,7 +24,7 @@ Route::get('/home-page',[PageController::class, 'ViewHomePageController']);
 
 Route::get('/handle-logout',[LoginController::class, 'HandleLogoutContoller']);
 
-Route::get('/staff-management',[PageController::class, 'ViewStaffManagementController']);
+Route::get('/staff-management-index',[PageController::class, 'ViewStaffManagementIndexController']);
 
 Route::post('/insert-staff-data',[DatabaseController::class, 'InsertStaffData']);
 
