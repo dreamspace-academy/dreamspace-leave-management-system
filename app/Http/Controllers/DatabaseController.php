@@ -69,7 +69,7 @@ class DatabaseController extends Controller
 
    }
 
-   public function EditStaffData(Request $request){
+   public function UpdateStaffData(Request $request){
 
       $session_type = Session::get('Session_Type');
 
@@ -96,11 +96,11 @@ class DatabaseController extends Controller
 
         if(DB::table('staff_data')->where('auto_id', $auto_id)->update(['firstname' => $first_name, 'lastname' => $last_name, 'dob' => $date_of_birth, 'email' => $email, 'phone_number' => $phone_number, 'position' => $position])){
 
-          return Redirect::to("/staff-management-index")->with('message', 'Updation is Successful.');
+          return Redirect::to("/view-staff-management-index")->with('message', 'Updation is Successful.');
 
         }else{
 
-          return Redirect::to("/staff-management-index")->with('message', 'No changes made.');
+          return Redirect::to("/view-staff-management-index")->with('message', 'No changes made.');
         }
 
       }else{

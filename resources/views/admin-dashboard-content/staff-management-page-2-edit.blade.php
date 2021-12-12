@@ -53,7 +53,7 @@
         <h3 class="panel-title" style="text-align:center;">Edit Staffs</h3>
         <br>
 
-        <form action="/edit-staff-data" method="POST">
+        <form action="/update-staff-data" method="POST">
 
           {{ csrf_field() }}
 

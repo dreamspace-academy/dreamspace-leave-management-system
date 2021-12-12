@@ -20,18 +20,20 @@ Route::get('/',[PageController::class, 'ViewLoginPageController']);
 
 Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);
 
-Route::get('/home-page',[PageController::class, 'ViewHomePageController']);
+Route::get('/view-home-page',[PageController::class, 'ViewHomePageController']);
 
 Route::get('/handle-logout',[LoginController::class, 'HandleLogoutContoller']);
 
-Route::get('/staff-management-index',[PageController::class, 'ViewStaffManagementIndexController']);
+Route::get('/view-staff-management-index',[PageController::class, 'ViewStaffManagementIndexController']);
 
 Route::post('/insert-staff-data',[DatabaseController::class, 'InsertStaffData']);
 
 Route::get('/delete-staff-data/{auto_id}',[DatabaseController::class, 'DeleteStaffData']);
 
-Route::get('/staff-management-edit/{auto_id}',[PageController::class, 'ViewStaffManagementEditController']);
+Route::get('/view-staff-management-edit/{auto_id}',[PageController::class, 'ViewStaffManagementEditController']);
 
-Route::post('/edit-staff-data',[DatabaseController::class, 'EditStaffData']);
+Route::post('/update-staff-data',[DatabaseController::class, 'UpdateStaffData']);
+
+Route::get('/view-settings-index',[PageController::class, 'ViewSettingsPageContoller']);
 
 ?>

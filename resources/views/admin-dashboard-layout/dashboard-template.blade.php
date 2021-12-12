@@ -43,13 +43,13 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="home-page">
+                <a class="nav-link" href="view-home-page">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Homepage</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/staff-management-index">
+                <a class="nav-link" href="/view-staff-management-index">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Staff Management</span></a>
             </li>
@@ -67,7 +67,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="view-settings-index">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Settings</span></a>
             </li>

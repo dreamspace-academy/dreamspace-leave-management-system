@@ -70,4 +70,22 @@ class PageController extends Controller
 
   }
 
+  public function ViewSettingsPageContoller(){
+
+       $session_type = Session::get('Session_Type');
+       $session_value = Session::get('Session_Value');
+
+       if($session_type == "Admin"){
+
+         $admin_data = DB::table('user_account')->where("account_type", "admin")->get(); // Get staff data.
+         return view("admin-dashboard-content/settings-page-1-index")->with('admin_data', $admin_data); //Send staff data with it.
+
+       }else{
+
+         return Redirect::to("/");
+
+       }
+
+  }
+
 }

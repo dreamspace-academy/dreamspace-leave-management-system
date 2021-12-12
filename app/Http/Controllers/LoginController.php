@@ -46,7 +46,7 @@ class LoginController extends Controller
              Session::put('Session_Type', 'Admin');
              Session::put('Session_Value', $real_username);
 
-             return Redirect::to("/home-page");
+             return Redirect::to("/view-home-page");
 
            }else if($real_account_type == "staff"){
 
