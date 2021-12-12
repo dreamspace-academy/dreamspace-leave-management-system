@@ -67,7 +67,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/handle-logout">
                     <i class="fas fa-fw fa-power-off"></i>
                     <span>Logout</span></a>
             </li>

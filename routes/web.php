@@ -21,4 +21,6 @@ Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);
 
 Route::get('/home-page',[PageController::class, 'ViewHomePageController']);
 
+Route::get('/handle-logout',[LoginController::class, 'HandleLogoutContoller']);
+
 ?>

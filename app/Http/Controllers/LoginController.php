@@ -71,5 +71,14 @@ class LoginController extends Controller
        }
 
        echo $real_password." ".$real_password." ".$real_account_type;
-  }
+    }
+
+    public function HandleLogoutContoller(){
+
+      Session::flush();
+      return Redirect('/');
+
+    }
+
+
 }
