@@ -74,7 +74,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Address" value="{{$staff_data[0]->email}}" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" value="{{$staff_data[0]->email}}" required>
             </div>
 
             <div class="col-md-4 mb-3">

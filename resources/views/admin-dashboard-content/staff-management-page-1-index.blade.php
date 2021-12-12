@@ -28,20 +28,20 @@
 @if(session()->has('message'))
 
     <div id="successBox" style="text-align:center;margin-top:20px;" class="alert alert-success col-md-12 alert-dismissible fade show" role="alert">
-                <strong> {{ session()->get('message') }}</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+        <strong> {{ session()->get('message') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 
     <script>
 
-            setTimeout(
-            function()
-            {
-                $("#successBox").delay(3000).fadeOut("slow");
+        setTimeout(
+        function()
+        {
+            $("#successBox").delay(3000).fadeOut("slow");
 
-            }, 1000);
+        }, 1000);
 
     </script>
 
@@ -81,7 +81,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
             </div>
 
             <div class="col-md-4 mb-3">

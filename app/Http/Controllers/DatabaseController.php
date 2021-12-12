@@ -34,10 +34,16 @@ class DatabaseController extends Controller
         $position       = $request->position;
 
 
-        if(DB::insert('INSERT INTO staff_data (staff_id, firstname, lastname, dob, email, phone_number, position) values (?, ?, ?, ?, ?, ?, ?)', [$staff_id, $first_name, $last_name, $date_of_birth, $email, $phone_number, $position])){
+        if (DB::table('staff_data')->where('staff_id', $staff_id)->doesntExist()) {
 
-            return redirect()->back()->with('message', 'Registeration is Successful.');
+          if(DB::insert('INSERT INTO staff_data (staff_id, firstname, lastname, dob, email, phone_number, position) values (?, ?, ?, ?, ?, ?, ?)', [$staff_id, $first_name, $last_name, $date_of_birth, $email, $phone_number, $position])){
 
+              return redirect()->back()->with('message', 'Registeration is Successful.');
+
+          }
+
+        }else{
+          return redirect()->back()->withErrors("<strong>Unable to register:</strong> The given staff ID already exists in the database");
         }
 
       }
