@@ -41,4 +41,7 @@ Route::post('/change-username',[DatabaseController::class, 'ChangeUsername']);
 Route::post('/change-password',[DatabaseController::class, 'ChangePassword']);
 
 Route::get('/view-user-accounts-index',[PageController::class, 'ViewUserAccountsIndexContoller']);
+
+Route::get('/delete-user-account/{auto_id}',[DatabaseController::class, 'DeleteUserAccount']);
+
 ?>
