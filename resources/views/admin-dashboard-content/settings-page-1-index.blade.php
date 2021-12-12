@@ -69,6 +69,12 @@
           <div class="col-sm-8">
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
           </div>
+
+          <div class="checkbox col-md-2" style="margin-top:0.6%;">
+              <label>
+                <input type="checkbox" style="width: 0.9rem; height: 0.9rem;" class="form-check-input" id="check1" runat="server"> Show Password
+              </label>
+          </div>
         </div>
 
         <div class="form-group row">
@@ -98,6 +104,13 @@
           <div class="col-sm-8">
             <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Current Password" required>
           </div>
+
+          <div class="checkbox col-md-2" style="margin-top:0.6%;">
+              <label>
+                <input type="checkbox" style="width: 0.9rem; height: 0.9rem;" class="form-check-input" id="check2" runat="server"> Show Password
+              </label>
+          </div>
+
         </div>
 
         <div class="form-group row">
@@ -105,6 +118,13 @@
           <div class="col-sm-8">
             <input type="password" class="form-control" id="new_password" name="new_password" placeholder="New Password" required>
           </div>
+
+          <div class="checkbox col-md-2" style="margin-top:0.6%;">
+              <label>
+                <input type="checkbox" style="width: 0.9rem; height: 0.9rem;" class="form-check-input" id="check3" runat="server"> Show Password
+              </label>
+          </div>
+
         </div>
 
         <div class="form-group row">
@@ -112,6 +132,13 @@
           <div class="col-sm-8">
             <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
           </div>
+
+          <div class="checkbox col-md-2" style="margin-top:0.6%;">
+              <label>
+                <input type="checkbox" style="width: 0.9rem; height: 0.9rem;" class="form-check-input" id="check4" runat="server"> Show Password
+              </label>
+          </div>
+
         </div>
 
         <div class="form-group row">
@@ -120,7 +147,6 @@
             <input class="btn btn-success col-md-2 col-sm-12" value="Change" id="button" type="submit">
           </div>
         </div>
-
       </form>
 
     </div>
@@ -137,5 +163,61 @@
 
     window.onload=function(){
       $(".nav-item:eq(4)").addClass("active");
+
+      document.getElementById("check1").onclick = function(){
+
+        if(document.getElementById("check1").checked == true){
+
+          document.getElementById("password").type="text";
+
+        }else{
+
+          document.getElementById("password").type="password";
+        }
+
+      }
+
+
+      document.getElementById("check2").onclick = function(){
+
+        if(document.getElementById("check2").checked == true){
+
+          document.getElementById("current_password").type="text";
+
+        }else{
+
+          document.getElementById("current_password").type="password";
+        }
+
+      }
+
+      document.getElementById("check3").onclick = function(){
+
+        if(document.getElementById("check3").checked == true){
+
+          document.getElementById("new_password").type="text";
+
+        }else{
+
+          document.getElementById("new_password").type="password";
+        }
+
+      }
+
+      document.getElementById("check4").onclick = function(){
+
+        if(document.getElementById("check4").checked == true){
+
+          document.getElementById("confirm_password").type="text";
+
+        }else{
+
+          document.getElementById("confirm_password").type="password";
+        }
+
+      }
+
     }
+
+
 </script>
