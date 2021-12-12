@@ -50,3 +50,11 @@
 
 
 @endsection
+
+<script>
+
+    window.onload=function(){
+      $(".nav-item:eq(1)").addClass("active");
+    }
+
+</script>

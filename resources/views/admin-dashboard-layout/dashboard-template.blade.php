@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="home-page">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Homepage</span></a>
             </li>
