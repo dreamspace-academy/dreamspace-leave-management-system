@@ -42,7 +42,7 @@ class PageController extends Controller
        if($session_type == "Admin"){
 
          $staff_data = DB::table('staff_data')->get(); // Get staff data.
-         return view("admin-dashboard-content/staff-management")->with('staff_data', $staff_data); //Send staff data with it.
+         return view("admin-dashboard-content/staff-management-page-1-index")->with('staff_data', $staff_data); //Send staff data with it.
 
        }else{
 
