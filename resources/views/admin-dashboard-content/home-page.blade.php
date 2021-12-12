@@ -9,6 +9,7 @@ Homepage
 @endsection
 
 <script>
+
     window.onload=function(){
       $(".nav-item:eq(0)").addClass("active");
     }
