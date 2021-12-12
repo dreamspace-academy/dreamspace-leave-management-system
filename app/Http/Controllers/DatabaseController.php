@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
-use Hash;
 use DB;
 
 class DatabaseController extends Controller
@@ -121,7 +120,7 @@ class DatabaseController extends Controller
 
         $admin_data = DB::table('user_account')->where("account_type", "admin")->get(); // Get staff data.
 
-        if(Hash::check($request->password, $admin_data[0]->password)){
+        if($request->password == $admin_data[0]->password){
 
           if(DB::table('user_account')->where('account_type', 'admin')->update(['username'=>$request->username])){
 
@@ -156,7 +155,7 @@ class DatabaseController extends Controller
 
        $admin_data = DB::table('user_account')->where("account_type", "admin")->get(); // Get staff data.
 
-       if(Hash::check($request->current_password, $admin_data[0]->password)){
+       if($request->current_password == $admin_data[0]->password){
 
          if($request->new_password == $request->confirm_password){
 

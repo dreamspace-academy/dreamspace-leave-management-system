@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use DB;
 use Redirect;
 use Session;
-use Hash;
 
 class LoginController extends Controller
 {
@@ -39,7 +38,7 @@ class LoginController extends Controller
        if($real_username != "" && $real_password != "" && $real_account_type != ""){
 
 
-         if($user_entered_username == $real_username && Hash::check($user_entered_password, $real_password)){
+         if($user_entered_username == $real_username && $user_entered_password == $real_password){
 
            if($real_account_type == "admin"){
 
