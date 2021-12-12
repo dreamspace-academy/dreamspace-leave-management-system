@@ -40,7 +40,7 @@ class PageController extends Controller
        $session_value = Session::get('Session_Value');
 
        if($session_type == "Admin"){
-
+         
          return view("admin-dashboard-content/staff-management");
 
        }else{
