@@ -56,11 +56,11 @@
                         </div>
                         <div style="text-align: center;">
                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="option1">
+                              <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="admin">
                               <label class="form-check-label" for="inlineRadio1" style="color:white; font-size:18px;">Admin Login</label>
                            </div>
                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="option2">
+                              <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="staff">
                               <label class="form-check-label" for="inlineRadio2" style="color:white; font-size:18px;">Staff Login</label>
                            </div>
                         </div>
