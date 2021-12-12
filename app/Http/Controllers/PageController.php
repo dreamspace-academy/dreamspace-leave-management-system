@@ -88,4 +88,22 @@ class PageController extends Controller
 
   }
 
+  public function ViewUserAccountsIndexContoller(){
+
+       $session_type = Session::get('Session_Type');
+       $session_value = Session::get('Session_Value');
+
+       if($session_type == "Admin"){
+
+         $staff_user_data = DB::table('user_account')->where("account_type", "staff")->get(); // Get staff data.
+         return view("admin-dashboard-content/user-accounts-page-1-index")->with('staff_user_data', $staff_user_data); //Send staff data with it.
+
+       }else{
+
+         return Redirect::to("/");
+
+       }
+
+  }
+
 }

@@ -61,7 +61,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="view-user-accounts-index">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User Accounts</span></a>
             </li>

@@ -52,7 +52,7 @@
 <div class="card">
       <div class="card-body">
 
-        <h3 class="panel-title" style="text-align:center;">Register Staffs</h3>
+        <h3 class="panel-title" style="text-align:center;">Create User Accounts</h3>
         <br>
 
         <form action="/insert-staff-data" method="POST">
@@ -65,7 +65,7 @@
             </div>
 
           </div>
-          <input class="btn btn-lg btn-primary" value="Rigister" type="submit">
+          <input class="btn btn-primary" value="Create" type="submit">
         </form>
 
       </div>
@@ -83,25 +83,17 @@
                   <th scope="col">Staff ID</th>
                   <th scope="col">Username</th>
                   <th scope="col">Password</th>
-                  <th scope="col">Date of Birth</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Phone Number</th>
-                  <th scope="col">Position</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($staff_data as $key => $data)
+                @foreach ($staff_user_data as $key => $data)
 
                     <tr>
                         <th scope="row">{{ $key + 1 }}</th>
                         <td>{{$data->staff_id}}</td>
-                        <td>{{$data->firstname}}</td>
-                        <td>{{$data->lastname}}</td>
-                        <td>{{$data->dob}}</td>
-                        <td>{{$data->email}}</td>
-                        <td>{{$data->phone_number}}</td>
-                        <td>{{$data->position}}</td>
+                        <td>{{$data->username}}</td>
+                        <td>{{$data->password}}</td>
                         <td><a class="btn btn-success" href="/view-staff-management-edit/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-staff-data/{{$data->auto_id}}">Delete</a></td>
                     </tr>
 
