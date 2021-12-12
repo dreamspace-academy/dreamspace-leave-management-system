@@ -102,6 +102,43 @@
 </div>
 
 
+<div class="card">
+      <div class="card-body">
+
+          <table class="table table-bordered table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Staff ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Date of Birth</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td><a class="btn btn-success">Edit<a> <a class="btn btn-danger">Delete<a></td>
+
+                </tr>
+              </tbody>
+          </table>
+
+      </div>
+</div>
+
+
 
 
 
