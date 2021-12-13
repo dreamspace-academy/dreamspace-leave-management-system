@@ -55,4 +55,5 @@ Route::post('/change-username-of-staff-account',[DatabaseController::class, 'Cha
 
 Route::post('/change-password-of-staff-account',[DatabaseController::class, 'ChangePasswordOfStaffAccount']);
 
+Route::post('/insert-leave-data-of-staff-account',[DatabaseController::class, 'InsertLeaveDataOfStaffAccount']);
 ?>

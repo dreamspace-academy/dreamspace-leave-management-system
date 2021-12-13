@@ -326,6 +326,26 @@ class DatabaseController extends Controller
   }
 
 
+   public function InsertLeaveDataOfStaffAccount(Request $request){
+
+     $session_type = Session::get('Session_Type');
+     $session_value = Session::get('Session_Value');
+
+     if($session_type == "Staff"){
+
+       $this->validate($request, [
+         'type_of_leave' => 'required',
+         'description' => 'required',
+         'date_of_leave' => 'required',
+       ]);
+
+       $type_of_leave  =  $request->staff_id;
+       $description  =  $request->username;
+       $date_of_leave  =  $request->password;
+
+     }
+   }
+
 }
 
 ?>
