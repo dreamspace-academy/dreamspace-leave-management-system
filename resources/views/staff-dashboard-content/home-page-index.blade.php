@@ -60,7 +60,7 @@
         <div class="form-group row">
           <label for="type_of_leave" class="col-sm-2 col-form-label">Type of Leave</label>
           <div class="col-sm-8">
-            <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example">
+            <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
               <option selected>Select a staff</option>
               <option value="Sick leave">Sick leave</option>
               <option value="Casual leave">Casual leave</option>
@@ -80,7 +80,7 @@
           <label for="description" class="col-sm-2 col-form-label">Description</label>
           <div class="col-sm-8">
 
-            <textarea class="form-control" name="description" id="description" placeholder="Enter the description"></textarea>
+            <textarea class="form-control" name="description" id="description" placeholder="Enter the description" required></textarea>
 
           </div>
         </div>
@@ -95,7 +95,7 @@
         <div class="form-group row">
           <label style="visibility:hidden;" for="button" class="col-sm-2 col-form-label">button</label>
           <div class="col-sm-8">
-            <input class="btn btn-success col-md-2 col-sm-12" value="Change" id="button" type="submit">
+            <input class="btn btn-success col-md-2 col-sm-12" value="Submit" id="button" type="submit">
           </div>
         </div>
 
