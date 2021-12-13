@@ -133,4 +133,22 @@ class PageController extends Controller
 
   }
 
+  public function ViewSettingsPageOfStaffAccountContoller(){
+
+     $session_type = Session::get('Session_Type');
+
+     if($session_type == "Staff"){
+
+       $session_value = Session::get('Session_Value');
+       $staff_data = DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->get(); // Get staff data.
+       return view("staff-dashboard-content/settings-page-1-index")->with('staff_data', $staff_data); //Send staff data with it.
+
+     }else{
+
+       return "hello";
+
+     }
+
+  }
+
 }

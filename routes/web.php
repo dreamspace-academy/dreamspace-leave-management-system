@@ -49,4 +49,6 @@ Route::post('/insert-user-accounts',[DatabaseController::class, 'InsertUserAccou
 
 Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomePageOfStaffAccountController']);
 
+Route::get('/view-settings-index-of-staff-account',[PageController::class, 'ViewSettingsPageOfStaffAccountContoller']);
+
 ?>
