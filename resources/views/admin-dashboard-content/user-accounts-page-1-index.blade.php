@@ -47,14 +47,12 @@
 
 @endif
 
-
-
 <div class="card">
     <div class="card-body">
       <h3 class="panel-title" style="text-align:center;">Create User Accounts</h3>
       <br>
 
-      <form action="/change-password" method="POST">
+      <form action="/insert-user-accounts" method="POST">
 
         {{ csrf_field() }}
 
@@ -75,14 +73,21 @@
         <div class="form-group row">
           <label for="username" class="col-sm-2 col-form-label">Username</label>
           <div class="col-sm-8">
-            <input type="password" class="form-control" id="username" name="username" placeholder="Enter username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="password" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-8">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            <input type="text" class="form-control" id="password" name="password" placeholder="Enter password" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label style="visibility:hidden;" for="button" class="col-sm-2 col-form-label">button</label>
+          <div class="col-sm-8">
+            <input class="btn btn-success col-md-2 col-sm-12" value="Create" id="button" type="submit">
           </div>
         </div>
 
@@ -108,7 +113,6 @@
               </thead>
               <tbody>
                 @foreach ($staff_user_data as $key => $data)
-
                     <tr>
                         <th scope="row">{{ $key + 1 }}</th>
                         <td>{{$data->staff_id}}</td>
@@ -124,8 +128,6 @@
 
       </div>
 </div>
-
-
 
 
 

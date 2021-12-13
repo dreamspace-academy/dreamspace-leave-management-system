@@ -207,6 +207,38 @@ class DatabaseController extends Controller
 
  }
 
+ public function InsertUserAccount(Request $request){
+
+   $session_type = Session::get('Session_Type');
+   $session_value = Session::get('Session_Value');
+
+   if($session_type == "Admin"){
+
+     $this->validate($request, [
+       'staff_id' => 'required',
+       'username' => 'required',
+       'password' => 'required',
+     ]);
+
+     $staff_id  =  $request->staff_id;
+     $username  =  $request->username;
+     $password  =  $request->password;
+
+
+     if (DB::table('user_account')->where('staff_id', $staff_id)->doesntExist()) {
+
+       if(DB::insert('INSERT INTO user_account (staff_id, username, password, account_type) values (?, ?, ?, ?)', [$staff_id, $username, $password, "staff"])){
+
+           return redirect()->back()->with('message', 'Account creation is Successful.');
+       }
+
+     }else{
+
+       return redirect()->back()->withErrors("<strong>Unable to create:</strong> The staff already has an account");
+
+     }
+   }
+ }
 
 }
 

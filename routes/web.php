@@ -44,4 +44,6 @@ Route::get('/view-user-accounts-index',[PageController::class, 'ViewUserAccounts
 
 Route::get('/delete-user-account/{auto_id}',[DatabaseController::class, 'DeleteUserAccount']);
 
+Route::post('/insert-user-accounts',[DatabaseController::class, 'InsertUserAccount']);
+
 ?>
