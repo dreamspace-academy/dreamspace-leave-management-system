@@ -97,7 +97,7 @@ class PageController extends Controller
 
        if($session_type == "Admin"){
 
-         $staff_data = DB::select("SELECT DISTINCT staff_data.staff_id, staff_data.firstname, staff_data.lastname FROM staff_data, user_account WHERE staff_data.staff_id != user_account.staff_id"); // SQL-CODE
+         $staff_data = DB::select("SELECT * FROM staff_data WHERE staff_data.staff_id NOT IN (SELECT user_account.staff_id FROM user_account)"); // SQL-CODE
          $staff_user_data = DB::table('user_account')->where("account_type", "staff")->get(); // Get staff data.
 
          return view("admin-dashboard-content/user-accounts-page-1-index")->with(['staff_user_data' => $staff_user_data, "staff_data" => $staff_data]); //Send staff data with it.
