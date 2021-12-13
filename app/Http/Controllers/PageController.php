@@ -121,9 +121,10 @@ class PageController extends Controller
       $session_value = Session::get('Session_Value');
 
       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+      $leave_pending_data = DB::table('leave_data')->where(["staff_id" => $session_value])->orderBy('date_of_leave', 'ASC')->get();
       $username = DB::table('user_account')->select("username")->where(["staff_id" => $session_value])->get();
 
-      return view("staff-dashboard-content/home-page-index")->with(['staff_basic_data' => $staff_basic_data, "username" => $username]);
+      return view("staff-dashboard-content/home-page-index")->with(['staff_basic_data' => $staff_basic_data, "username" => $username, "leave_pending_data" => $leave_pending_data]);
 
     }else{
 

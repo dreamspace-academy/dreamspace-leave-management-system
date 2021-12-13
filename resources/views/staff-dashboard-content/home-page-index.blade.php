@@ -111,17 +111,23 @@
       <h3 class="panel-title" style="text-align:center;">My Pending Requests</h3>
       <br>
 
-      <div class="card text-white bg-dark mb-3">
-        <div class="card-header bg-dark ">
-          <strong>2021-12-02</strong>
-          <i class="float-right" style="font-size:85%;">Request sent on :- 2021-12-13 19:08:59</i>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Sick Leave</h5>
-          <p class="card-text">Hi Sir, I am having fever, therefore, I want to have a leave.</p>
-          <a class="btn btn-danger float-right">Delete Request</a>
-        </div>
-      </div>
+      @foreach ($leave_pending_data as $key => $data)
+
+          <div class="card text-white bg-dark mb-3">
+            <div class="card-header bg-dark ">
+              <strong>{{$data->date_of_leave}}</strong>
+              <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{$data->type_of_leave}}</h5>
+              <p class="card-text">{{$data->description}}</p>
+              <a class="btn btn-danger float-right">Delete Request</a>
+            </div>
+          </div>
+
+      @endforeach
+
+
 
     </div>
 </div>
