@@ -121,7 +121,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$data->type_of_leave}}</h5>
               <p class="card-text">{{$data->description}}</p>
-              <a class="btn btn-danger float-right">Delete Request</a>
+              <a class="btn btn-danger float-right confirmation" href="/delete-leave-pending-request-in-staff-account/{{$data->auto_id}}">Delete Request</a>
             </div>
           </div>
 
@@ -141,6 +141,10 @@
     window.onload=function(){
 
       $(".nav-item:eq(0)").addClass("active");
+
+      $('.confirmation').on('click', function () {
+          return confirm('Are you sure to delete?');
+      });
 
     }
 
