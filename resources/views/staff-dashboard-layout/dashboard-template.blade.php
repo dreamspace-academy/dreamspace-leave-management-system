@@ -49,7 +49,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/view-settings-index">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-calculator"></i>
                     <span>My Leave History</span></a>
             </li>

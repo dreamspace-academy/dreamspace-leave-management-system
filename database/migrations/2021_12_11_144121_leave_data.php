@@ -18,6 +18,7 @@ class LeaveData extends Migration
 
         $table->increments('auto_id');
         $table->string('staff_id');
+        $table->string('type_of_leave');
         $table->string('reason',5000);
         $table->string('date_of_leave');
         $table->string('date_of_request');
