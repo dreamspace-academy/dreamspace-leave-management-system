@@ -139,8 +139,11 @@ class PageController extends Controller
      if($session_type == "Staff"){
 
        $session_value = Session::get('Session_Value');
+
+       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
        $staff_data = DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->get(); // Get staff data.
-       return view("staff-dashboard-content/settings-page-1-index")->with('staff_data', $staff_data); //Send staff data with it.
+
+       return view("staff-dashboard-content/settings-page-1-index")->with(['staff_data' => $staff_data, 'staff_basic_data' => $staff_basic_data]); //Send staff data with it.
 
      }else{
 

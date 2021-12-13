@@ -49,21 +49,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/view-staff-management-index">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Staff Management</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-database"></i>
-                    <span>Leave Management</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/view-user-accounts-index">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>User Accounts</span></a>
+                <a class="nav-link" href="/view-settings-index">
+                    <i class="fas fa-fw fa-calculator"></i>
+                    <span>My Leave History</span></a>
             </li>
 
             <li class="nav-item">
