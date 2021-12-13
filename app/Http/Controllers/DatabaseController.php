@@ -339,9 +339,12 @@ class DatabaseController extends Controller
          'date_of_leave' => 'required',
        ]);
 
-       $type_of_leave  =  $request->staff_id;
-       $description  =  $request->username;
-       $date_of_leave  =  $request->password;
+       $staff_id        =  $session_value;
+       $type_of_leave   =  $request->staff_id;
+       $description     =  $request->username;
+       $date_of_leave   =  $request->password;
+       $date_of_request = date('Y-m-d H:i:s');
+
 
      }
    }

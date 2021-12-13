@@ -22,7 +22,6 @@ class LeaveData extends Migration
         $table->string('description',5000);
         $table->string('date_of_leave');
         $table->string('date_of_request');
-        $table->string('remark',5000);
         $table->string('approval_status');
 
       });
