@@ -248,6 +248,41 @@ class DatabaseController extends Controller
    }
  }
 
+ public function ChangeUsernameOfStaffAccount(Request $request){
+
+    $session_type = Session::get('Session_Type');
+    $session_value = Session::get('Session_Value');
+
+    if($session_type == "Staff"){
+
+       $staff_data = DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->get(); // Get staff data.
+
+       if($request->password == $staff_data[0]->password){
+
+         if(DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->update(['username'=>$request->username])){
+
+             return redirect()->back()->with('message', 'Username has been updated successfully.');
+
+         }else{
+
+           return redirect()->back()->with('message', 'No changes made.');
+
+         }
+
+
+       }else{
+
+         return redirect()->back()->withErrors('The password is wrong.');
+       }
+
+    }else{
+
+        return Redirect::to("/");
+
+    }
+
+}
+
 }
 
 ?>

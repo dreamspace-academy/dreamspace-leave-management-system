@@ -51,4 +51,5 @@ Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomeP
 
 Route::get('/view-settings-index-of-staff-account',[PageController::class, 'ViewSettingsPageOfStaffAccountContoller']);
 
+Route::post('/change-username-of-staff-account',[DatabaseController::class, 'ChangeUsernameOfStaffAccount'])
 ?>

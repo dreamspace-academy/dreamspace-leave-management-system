@@ -54,7 +54,7 @@
       <h3 class="panel-title" style="text-align:center;">Change Username</h3>
       <br>
 
-      <form action="/change-username" method="POST">
+      <form action="/change-username-of-staff-account" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">
