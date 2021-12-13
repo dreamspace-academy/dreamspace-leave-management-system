@@ -58,25 +58,37 @@
         {{ csrf_field() }}
 
         <div class="form-group row">
-          <label for="username" class="col-sm-2 col-form-label">Reason</label>
+          <label for="type_of_leave" class="col-sm-2 col-form-label">Type of Leave</label>
+          <div class="col-sm-8">
+            <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example">
+              <option selected>Select a staff</option>
+              <option value="Sick leave">Sick leave</option>
+              <option value="Casual leave">Casual leave</option>
+              <option value="Duty Leave">Duty Leave</option>
+              <option value="Maternity leave">Maternity leave</option>
+              <option value="Paternity leave">Paternity leave</option>
+              <option value="Bereavement leave">Bereavement leave</option>
+              <option value="Compensatory leave">Compensatory leave</option>
+              <option value="Sabbatical leave">Sabbatical leave</option>
+              <option value="Unpaid Leave">Unpaid Leave</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="description" class="col-sm-2 col-form-label">Description</label>
           <div class="col-sm-8">
 
-            <textarea class="form-control" name="reason" id="reason" placeholder="Enter the reason"></textarea>
+            <textarea class="form-control" name="description" id="description" placeholder="Enter the description"></textarea>
 
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="username" class="col-sm-2 col-form-label">Date of Birth</label>
+          <label for="date_of_leave" class="col-sm-2 col-form-label">Date of Leave</label>
           <div class="col-sm-4">
-              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="password" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-8">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+              <input type="date" class="form-control" id="date_of_leave" name="date_of_leave" required>
           </div>
         </div>
 
