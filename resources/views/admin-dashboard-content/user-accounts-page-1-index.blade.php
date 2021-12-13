@@ -50,25 +50,45 @@
 
 
 <div class="card">
-      <div class="card-body">
+    <div class="card-body">
+      <h3 class="panel-title" style="text-align:center;">Create User Accounts</h3>
+      <br>
 
-        <h3 class="panel-title" style="text-align:center;">Create User Accounts</h3>
-        <br>
+      <form action="/change-password" method="POST">
 
-        <form action="/insert-staff-data" method="POST">
-          {{ csrf_field() }}
-          <div class="form-row">
+        {{ csrf_field() }}
 
-            <div class="col-md-4 mb-3">
-              <label for="staff_id">Staff ID</label>
-              <input type="text" class="form-control" id="staff_id" name="staff_id" placeholder="Enter Staff ID" required>
-            </div>
-
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">Staff ID</label>
+          <div class="col-sm-8">
+            <select class="form-control" aria-label="Default select example">
+              <option selected>Select a staff</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
           </div>
-          <input class="btn btn-primary" value="Create" type="submit">
-        </form>
+        </div>
 
-      </div>
+
+
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">Username</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="username" name="username" placeholder="Enter username" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
 </div>
 
 <br>

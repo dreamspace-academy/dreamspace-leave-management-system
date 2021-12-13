@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="view-home-page">
+                <a class="nav-link" href="/view-home-page">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Homepage</span></a>
             </li>
@@ -61,13 +61,13 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="view-user-accounts-index">
+                <a class="nav-link" href="/view-user-accounts-index">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User Accounts</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="view-settings-index">
+                <a class="nav-link" href="/view-settings-index">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Settings</span></a>
             </li>
