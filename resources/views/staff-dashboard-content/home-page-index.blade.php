@@ -54,7 +54,7 @@
       <h3 class="panel-title" style="text-align:center;">Requesting for leave</h3>
       <br>
 
-      <form action="/change-username-of-staff-account" method="POST">
+      <form action="/insert-leave-data-of-staff-account" method="POST">
         {{ csrf_field() }}
 
         <div class="form-group row">
