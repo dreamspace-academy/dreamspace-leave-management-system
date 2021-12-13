@@ -46,4 +46,7 @@ Route::get('/delete-user-account/{auto_id}',[DatabaseController::class, 'DeleteU
 
 Route::post('/insert-user-accounts',[DatabaseController::class, 'InsertUserAccount']);
 
+
+Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomePageOfStaffAccountController']);
+
 ?>

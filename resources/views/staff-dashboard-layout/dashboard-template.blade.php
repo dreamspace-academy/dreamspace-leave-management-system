@@ -111,7 +111,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-3 d-none d-lg-inline" style="color: white; font-size: 18px; font-weight: bold;">Admin</span>
+                                <span class="mr-3 d-none d-lg-inline" style="color: white; font-size: 18px; font-weight: bold;"><span class="mr-3 d-none d-lg-inline" style="color: white; font-size: 18px; font-weight: bold;">{{$staff_basic_data[0]->firstname}} {{$staff_basic_data[0]->lastname}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('dashboard-template')}}/img/undraw_profile.svg">
                             </a>

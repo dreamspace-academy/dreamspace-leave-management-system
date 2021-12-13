@@ -21,14 +21,16 @@ class LoginController extends Controller
         $user_entered_login_type  =    $request->login_type;
 
 
+        $real_staff_id      = "";
         $real_username      = "";
         $real_password      = "";
         $real_account_type  = "";
 
-        $user = DB::select( DB::raw("SELECT username, password,account_type FROM user_account WHERE username ='$user_entered_username' AND account_type='$user_entered_login_type'"));
+        $user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username' AND account_type='$user_entered_login_type'"));
 
         foreach($user as $u){
 
+           $real_staff_id     =     $u->staff_id;
            $real_username     =     $u->username;
            $real_password     =     $u->password;
            $real_account_type =     $u->account_type;
@@ -50,9 +52,10 @@ class LoginController extends Controller
            }else if($real_account_type == "staff"){
 
              Session::put('Session_Type', 'Staff');
-             Session::put('Session_Value', $real_username);
+             Session::put('Session_Value', $real_staff_id);
 
-             return Redirect::to("/home-page");
+             return Redirect::to("/view-home-page-of-staff-account");
+
 
            }
 

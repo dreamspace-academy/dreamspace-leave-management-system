@@ -227,9 +227,17 @@ class DatabaseController extends Controller
 
      if (DB::table('user_account')->where('staff_id', $staff_id)->doesntExist()) {
 
-       if(DB::insert('INSERT INTO user_account (staff_id, username, password, account_type) values (?, ?, ?, ?)', [$staff_id, $username, $password, "staff"])){
+       if (DB::table('user_account')->where('username', $username)->doesntExist()) {
 
-           return redirect()->back()->with('message', 'Account creation is Successful.');
+         if(DB::insert('INSERT INTO user_account (staff_id, username, password, account_type) values (?, ?, ?, ?)', [$staff_id, $username, $password, "staff"])){
+
+             return redirect()->back()->with('message', 'Account creation is Successful.');
+         }
+
+       }else{
+
+         return redirect()->back()->withErrors("<strong>Unable to create:</strong> The given username already exists in the database.");
+
        }
 
      }else{

@@ -110,4 +110,27 @@ class PageController extends Controller
 
   }
 
+
+  public function ViewHomePageOfStaffAccountController(){
+
+    $session_type = Session::get('Session_Type');
+
+
+    if($session_type == "Staff"){
+
+      $session_value = Session::get('Session_Value');
+
+      $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+      $username = DB::table('user_account')->select("username")->where(["staff_id" => $session_value])->get();
+
+      return view("staff-dashboard-content/home-page-index")->with(['staff_basic_data' => $staff_basic_data, "username" => $username]);
+
+    }else{
+
+      return Redirect::to("/");
+
+    }
+
+  }
+
 }
