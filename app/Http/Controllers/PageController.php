@@ -136,7 +136,6 @@ class PageController extends Controller
   public function ViewSettingsPageOfStaffAccountContoller(){
 
      $session_type = Session::get('Session_Type');
-
      if($session_type == "Staff"){
 
        $session_value = Session::get('Session_Value');
@@ -145,10 +144,9 @@ class PageController extends Controller
 
      }else{
 
-       return "hello";
+       return Redirect::to("/");
 
      }
 
   }
-  
 }

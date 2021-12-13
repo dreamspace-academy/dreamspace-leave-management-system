@@ -281,7 +281,50 @@ class DatabaseController extends Controller
 
     }
 
-}
+  }
+
+  public function ChangePasswordOfStaffAccount(Request $request){
+
+    $session_type = Session::get('Session_Type');
+    $session_value = Session::get('Session_Value');
+
+    if($session_type == "Staff"){
+
+       $staff_data = DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->get(); // Get staff data.
+
+       if($request->current_password == $staff_data[0]->password){
+
+         if($request->new_password == $request->confirm_password){
+
+           if(DB::table('user_account')->where(["account_type" => "staff", "staff_id" => $session_value])->update(['password'=>$request->new_password])){
+
+               return redirect()->back()->with('message', 'Password has been updated successfully.');
+
+           }else{
+
+             return redirect()->back()->with('message', 'No changes made.');
+
+           }
+
+         }else{
+
+           return redirect()->back()->withErrors('The confirm password does not match');
+
+         }
+
+       }else{
+
+         return redirect()->back()->withErrors('The current password is wrong.');
+       }
+
+    }else{
+
+        return Redirect::to("/");
+
+    }
+
+  }
+
 
 }
 

@@ -96,7 +96,8 @@
       <h3 class="panel-title" style="text-align:center;">Change Password</h3>
       <br>
 
-      <form action="/change-password" method="POST">
+      <form action="/change-password-of-staff-account" method="POST">
+
         {{ csrf_field() }}
 
         <div class="form-group row">
