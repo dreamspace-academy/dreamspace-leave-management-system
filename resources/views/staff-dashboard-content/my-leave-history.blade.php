@@ -92,25 +92,49 @@
               </select>
 
             </div>
-
-            <div class="col-md-4 mb-3">
-              <label for="phone_number">Phone Number</label>
-              <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number" required>
-            </div>
-
-            <div class="col-md-4 mb-3">
-              <label for="position">Position</label>
-              <input type="text" class="form-control" id="position" name="position" placeholder="Enter Position/Role" required>
-            </div>
-
           </div>
-          <input class="btn btn-lg btn-primary" value="Rigister" type="submit">
+          <input class="btn btn-primary float-right" value="Search" type="submit">
         </form>
 
       </div>
 </div>
 
 <br>
+
+<div class="card">
+    <div class="card-body">
+      <h3 class="panel-title" style="text-align:center;">My Leave History</h3>
+      <br>
+
+      @foreach ($leave_data as $key => $data)
+
+          <div class="card text-white bg-dark mb-3">
+            @if($data->approval_status =="[ACCEPTED]")
+              <div class="card-header bg-success">
+                <strong>{{$data->date_of_leave}} (Accepted)</strong>
+                <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
+              </div>
+            @elseif($data->approval_status =="[DECLINED]")
+              <div class="card-header bg-danger">
+                <strong>{{$data->date_of_leave}} (Declined)</strong>
+                <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
+              </div>
+            @endif
+
+            <div class="card-body">
+              <h5 class="card-title">{{$data->type_of_leave}}</h5>
+              <p class="card-text">{{$data->description}}</p>
+            </div>
+          </div>
+
+      @endforeach
+
+
+
+    </div>
+</div>
+
+
 
 @endsection
 

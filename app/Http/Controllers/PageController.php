@@ -185,9 +185,11 @@ class PageController extends Controller
      if($session_type == "Staff"){
 
        $session_value = Session::get('Session_Value');
-       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
 
-       return view("staff-dashboard-content/my-leave-history")->with("staff_basic_data", $staff_basic_data); //Send staff data with it.
+       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+       $leave_data = DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
+
+       return view("staff-dashboard-content/my-leave-history")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data]); //Send staff data with it.
 
      }else{
 
