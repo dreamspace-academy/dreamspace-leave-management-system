@@ -55,11 +55,13 @@
       <h3 class="panel-title" style="text-align:center;">Pending Requests</h3>
       <br>
 
+
+
       @foreach ($pending_data as $key => $data)
 
           <div class="card text-white bg-dark mb-3">
             <div class="card-header bg-dark ">
-              <strong>{{$data->date_of_leave}}</strong>
+              <strong>{{$data->date_of_leave}} ({{$data->firstname}} {{$data->lastname}})</strong>
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
             <div class="card-body">

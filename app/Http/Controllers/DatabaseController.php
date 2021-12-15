@@ -146,7 +146,6 @@ class DatabaseController extends Controller
 
  }
 
-
  public function ChangePassword(Request $request){
 
     $session_type = Session::get('Session_Type');
