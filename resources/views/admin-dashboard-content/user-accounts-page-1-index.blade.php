@@ -118,7 +118,7 @@
                         <td>{{$data->staff_id}}</td>
                         <td>{{$data->username}}</td>
                         <td>{{$data->password}}</td>
-                        <td><a class="btn btn-success" href="/view-staff-management-edit/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-user-account/{{$data->auto_id}}">Delete</a></td>
+                        <td><a class="btn btn-success" href="/view-edit-user-account/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-user-account/{{$data->auto_id}}">Delete</a></td>
                     </tr>
 
                 @endforeach

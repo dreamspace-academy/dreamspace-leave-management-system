@@ -61,7 +61,7 @@ class PageController extends Controller
 
        if($session_type == "Admin"){
 
-         $staff_data = DB::table('staff_data')->where("auto_id", $auto_id )->get(); // Get staff data.
+         $staff_data = DB::table('staff_data')->where("auto_id", $auto_id)->get(); // Get staff data.
          return view("admin-dashboard-content/staff-management-page-2-edit")->with('staff_data', $staff_data); //Send staff data with it.
 
        }else{
@@ -111,6 +111,27 @@ class PageController extends Controller
        }
 
   }
+
+  public function ViewEditUserAccount($auto_id){
+
+    $session_type = Session::get('Session_Type');
+    $session_value = Session::get('Session_Value');
+
+    if($session_type == "Admin"){
+
+      $user_data = DB::table('user_account')->where(["auto_id" => $auto_id])->get();
+      return view("admin-dashboard-content/user-accounts-page-2-edit")->with(['user_data' => $user_data]); //Send staff data with it.
+
+
+
+    }else{
+
+      return Redirect::to("/");
+
+    }
+
+  }
+
 
 
   public function ViewHomePageOfStaffAccountController(){

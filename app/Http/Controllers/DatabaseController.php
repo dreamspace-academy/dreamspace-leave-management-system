@@ -188,6 +188,39 @@ class DatabaseController extends Controller
 
   }
 
+  public function EditUserAccount(Request $request){
+
+     $session_type = Session::get('Session_Type');
+
+     if($session_type == "Admin"){
+
+       $this->validate($request, [
+         'username' => 'required',
+         'password' => 'required',
+       ]);
+
+
+       $username  =  $request->username;
+       $password  =  $request->password;
+       $auto_id   =  $request->auto_id;
+
+       if(DB::table('user_account')->where('auto_id', $auto_id)->update(['username' => $username, 'password' => $password])){
+
+         return Redirect::to("/view-user-accounts-index")->with('message', 'Updation is Successful.');
+
+       }else{
+
+         return Redirect::to("/view-user-accounts-index")->with('message', 'No changes made.');
+       }
+
+
+     }else{
+
+         return Redirect::to("/");
+
+     }
+  }
+
   public function DeleteUserAccount($auto_id){
 
      $session_type = Session::get('Session_Type');
