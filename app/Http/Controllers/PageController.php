@@ -19,7 +19,7 @@ class PageController extends Controller
        $session_type = Session::get('Session_Type');
        $session_value = Session::get('Session_Value');
 
-       $pending_data = DB::table('leave_data')->where(["approval_status" => "[PENDING]"])->orderBy('date_of_leave', 'ASC')->get();
+       $pending_data = DB::table('leave_data')->where(["approval_status" => "[PENDING]"])->orderBy('date_of_request', 'ASC')->get();
 
        if($session_type == "Admin"){
 
