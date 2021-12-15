@@ -176,4 +176,24 @@ class PageController extends Controller
      }
 
   }
+
+  public function ViewMyLeaveHistoryPageOfStaffAccountController(){
+
+
+     $session_type = Session::get('Session_Type');
+
+     if($session_type == "Staff"){
+
+       $session_value = Session::get('Session_Value');
+       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+
+       return view("staff-dashboard-content/my-leave-history")->with("staff_basic_data", $staff_basic_data); //Send staff data with it.
+
+     }else{
+
+       return Redirect::to("/");
+
+     }
+  }
+
 }

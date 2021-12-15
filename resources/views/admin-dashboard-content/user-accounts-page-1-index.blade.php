@@ -61,7 +61,7 @@
           <div class="col-sm-8">
             <select class="form-control" name = "staff_id" id="staff_id" aria-label="Default select example">
 
-              <option selected>Select a staff</option>
+              <option selected disabled>Select a staff</option>
               @foreach ($staff_data as $key => $data)
                 <option value="{{$data->staff_id}}">{{$data->staff_id}} ({{$data->firstname}} {{$data->lastname}})</option>
               @endforeach

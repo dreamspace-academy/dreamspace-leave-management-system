@@ -67,4 +67,6 @@ Route::post('/insert-leave-data-of-staff-account',[DatabaseController::class, 'I
 
 Route::get('/delete-leave-pending-request-in-staff-account/{auto_id}',[DatabaseController::class, 'DeleteLeavePendingRequestInStaffAccount']);
 
+Route::get('/view-my-leave-history-of-staff-account',[PageController::class, 'ViewMyLeaveHistoryPageOfStaffAccountController']);
+
 ?>

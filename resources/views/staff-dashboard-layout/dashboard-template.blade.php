@@ -49,7 +49,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/view-my-leave-history-of-staff-account">
                     <i class="fas fa-fw fa-calculator"></i>
                     <span>My Leave History</span></a>
             </li>
