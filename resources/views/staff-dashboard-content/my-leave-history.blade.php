@@ -104,6 +104,11 @@
 <div class="card">
     <div class="card-body">
       <h3 class="panel-title" style="text-align:center;">My Leave History</h3>
+
+      <h4>Number of Leaves: <span style="text-weight:bold; color:blue;">{{count($leave_data)}}</span> </h4>
+
+      <hr>
+
       <br>
 
       @foreach ($leave_data as $key => $data)
