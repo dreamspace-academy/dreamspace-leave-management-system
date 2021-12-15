@@ -66,7 +66,7 @@
               <h5 class="card-title">{{$data->type_of_leave}}</h5>
               <p class="card-text">{{$data->description}}</p>
 
-              <a style="margin-left:10px;" class="btn btn-danger  float-right confirmation" href="/delete-leave-pending-request-in-staff-account/{{$data->auto_id}}">Decline</a>
+              <a style="margin-left:10px;" class="btn btn-danger  float-right " href="/decline-request/{{$data->auto_id}}">Decline</a>
               <a class="btn btn-success float-right" href="/accept-request/{{$data->auto_id}}">Accept</a>
 
             </div>

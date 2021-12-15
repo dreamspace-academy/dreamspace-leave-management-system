@@ -52,6 +52,8 @@ Route::post('/insert-user-accounts',[DatabaseController::class, 'InsertUserAccou
 
 Route::get('/accept-request/{auto_id}',[DatabaseController::class, 'AcceptRequest']);
 
+Route::get('/decline-request/{auto_id}',[DatabaseController::class, 'DeclineRequest']);
+
 
 Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomePageOfStaffAccountController']);
 
