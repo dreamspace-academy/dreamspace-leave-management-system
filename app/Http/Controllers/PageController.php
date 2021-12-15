@@ -198,4 +198,19 @@ class PageController extends Controller
      }
   }
 
+  public function FilterSearchLeaveHistoryPageOfStaffAccountController(Request $request){
+    $session_type = Session::get('Session_Type');
+
+    if($session_type == "Staff"){
+
+      return $request;
+
+
+    }else{
+
+      return Redirect::to("/");
+    }
+
+  }
+
 }

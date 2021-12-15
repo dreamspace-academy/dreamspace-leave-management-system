@@ -69,4 +69,6 @@ Route::get('/delete-leave-pending-request-in-staff-account/{auto_id}',[DatabaseC
 
 Route::get('/view-my-leave-history-of-staff-account',[PageController::class, 'ViewMyLeaveHistoryPageOfStaffAccountController']);
 
+Route::post('/filter-search-leave-history-of-staff-account',[PageController::class, 'FilterSearchLeaveHistoryPageOfStaffAccountController']);
+
 ?>

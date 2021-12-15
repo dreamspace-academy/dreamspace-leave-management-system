@@ -163,7 +163,7 @@
 <script>
 
     window.onload=function(){
-      $(".nav-item:eq(4)").addClass("active");
+      $(".nav-item:eq(2)").addClass("active");
 
       document.getElementById("check1").onclick = function(){
 
