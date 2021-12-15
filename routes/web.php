@@ -50,6 +50,8 @@ Route::post('/edit-user-account',[DatabaseController::class, 'EditUserAccount'])
 
 Route::post('/insert-user-accounts',[DatabaseController::class, 'InsertUserAccount']);
 
+Route::get('/accept-request/{auto_id}',[DatabaseController::class, 'AcceptRequest']);
+
 
 Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomePageOfStaffAccountController']);
 

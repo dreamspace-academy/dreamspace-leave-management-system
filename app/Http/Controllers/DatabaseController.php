@@ -281,6 +281,31 @@ class DatabaseController extends Controller
    }
  }
 
+ public function AcceptRequest($auto_id){
+
+   $session_type = Session::get('Session_Type');
+   $session_value = Session::get('Session_Value');
+
+   if($session_type == "Admin"){
+
+     if(DB::table('leave_data')->where(["auto_id"=>$auto_id])->update(['approval_status'=>"[ACCEPTED]"])){
+
+         return redirect()->back()->with('message', 'Request has been updated successfully.');
+
+     }else{
+
+       return redirect()->back()->with('message', 'No changes made.');
+
+     }
+
+   }else{
+
+        return Redirect::to("/");
+
+   }
+
+ }
+
  public function ChangeUsernameOfStaffAccount(Request $request){
 
     $session_type = Session::get('Session_Type');
