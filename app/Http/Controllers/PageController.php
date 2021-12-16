@@ -240,6 +240,11 @@ class PageController extends Controller
       }else if($type_of_leave != "All" && $year != "All" && $month != "All" && $status == "All"){
 
         $SqlCode = "SELECT * FROM leave_data WHERE (date_of_leave LIKE '%{$year}_{$month}___%' AND type_of_leave = '$type_of_leave') AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year != "All" && $month != "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE (date_of_leave LIKE '%{$year}_{$month}___%' AND type_of_leave = '$type_of_leave' AND approval_status = '$status') AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
       }
 
       $leave_data = DB::select($SqlCode); // SQL-CODE
