@@ -83,6 +83,7 @@
               <select class="form-control" name = "year" id="year" aria-label="Default select example" required>
 
                 <option value="All" selected>All</option>
+                <option value='2021'>2021</option>
                 <option value='2022'>2022</option>
                 <option value='2023'>2023</option>
                 <option value='2024'>2024</option>
@@ -285,7 +286,7 @@
       $('#month').val("{{$filter_options['month']}}");
       $('#status').val("{{$filter_options['status']}}");
 
-      
+
     }
 
 </script>
