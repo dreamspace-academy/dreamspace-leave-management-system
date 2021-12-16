@@ -266,7 +266,7 @@
 
 
     </div>
-</div>{{$filter_options['month']}}
+</div>
 
 @endsection
 
