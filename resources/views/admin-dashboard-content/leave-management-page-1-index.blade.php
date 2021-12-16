@@ -60,6 +60,25 @@
           <div class="form-row">
 
             <div class="col-md-4 mb-3">
+              <label for="staff_id">Select Staff</label>
+
+              <select class="form-control" name = "staff_id" id="staff_id" aria-label="Default select example" required>
+
+                <option value="Select a staff" selected disabled>Select a staff</option>
+                <option value="Sick leave">Sick leave</option>
+                <option value="Casual leave">Casual leave</option>
+                <option value="Duty Leave">Duty Leave</option>
+                <option value="Maternity leave">Maternity leave</option>
+                <option value="Paternity leave">Paternity leave</option>
+                <option value="Bereavement leave">Bereavement leave</option>
+                <option value="Compensatory leave">Compensatory leave</option>
+                <option value="Sabbatical leave">Sabbatical leave</option>
+                <option value="Unpaid Leave">Unpaid Leave</option>
+
+              </select>
+            </div>
+
+            <div class="col-md-4 mb-3">
               <label for="type_of_leave">Type of Leave</label>
 
               <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
@@ -274,7 +293,7 @@
 
     window.onload=function(){
 
-      $(".nav-item:eq(1)").addClass("active");
+      $(".nav-item:eq(2)").addClass("active");
 
       $('.confirmation').on('click', function () {
           return confirm('Are you sure to delete?');

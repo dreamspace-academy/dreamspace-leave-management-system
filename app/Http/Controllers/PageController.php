@@ -140,7 +140,7 @@ class PageController extends Controller
 
       $leave_data = DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
 
-      return view("admin-dashboard-content/my-leave-history")->with(["leave_data" => $leave_data, "filter_options" => ["type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
+      return view("admin-dashboard-content/leave-management-page-1-index")->with(["leave_data" => $leave_data, "filter_options" => ["staff_id" => "Select a staff","type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
 
     }else{
 

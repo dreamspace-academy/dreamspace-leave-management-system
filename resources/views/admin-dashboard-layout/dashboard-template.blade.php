@@ -55,7 +55,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/view-leave-history">
                     <i class="fas fa-fw fa-database"></i>
                     <span>Leave Management</span></a>
             </li>
