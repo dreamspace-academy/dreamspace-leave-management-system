@@ -294,7 +294,7 @@
       });
 
 
-
+      $('#staff_id').val("{{$filter_options['staff_id']}}");
       $('#type_of_leave').val("{{$filter_options['type_of_leave']}}");
       $('#year').val("{{$filter_options['year']}}");
       $('#month').val("{{$filter_options['month']}}");
