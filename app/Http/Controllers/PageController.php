@@ -178,9 +178,9 @@ class PageController extends Controller
 
         $SqlCode = "SELECT * FROM leave_data WHERE type_of_leave = '$type_of_leave' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') AND staff_id = '$staff_id' ORDER BY 'DESC'";
 
-      }else if($type_of_leave == "All" && $year != "All" && $month == "All" && $status == "All"){
+      }else if($type_of_leave == "All" && $year != "All" && $month == "All" && $status == "All" && $staff_id != ""){
 
-        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '{$year}______%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '{$year}______%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') AND staff_id = '$staff_id' ORDER BY 'DESC'";
 
       }else if($type_of_leave == "All" && $year != "All" && $month != "All" && $status == "All"){
 
@@ -223,7 +223,7 @@ class PageController extends Controller
 
       $staff_basic_data = DB::table('staff_data')->select("staff_id","firstname", "lastname")->get();
 
-      return view("admin-dashboard-content/leave-management-page-1-index")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data, "filter_options" => ["staff_id" => "Select a staff","type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
+      return view("admin-dashboard-content/leave-management-page-1-index")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data, "filter_options" => ["staff_id" => "$staff_id", "type_of_leave" => "$type_of_leave", "year" => "$year", "month" => "$month", "status" => "$status"]]); //Send staff data with it.
 
 
     }else{
