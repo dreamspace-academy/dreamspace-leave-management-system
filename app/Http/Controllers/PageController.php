@@ -213,7 +213,7 @@ class PageController extends Controller
       $month         =  $request->month;
       $status        =  $request->status;
 
-
+  
       if($type_of_leave == "All" && $year == "All" && $month == "All" && $status == "All"){
 
         $SqlCode = "SELECT * FROM leave_data WHERE approval_status  = '[ACCEPTED]' OR approval_status = '[DECLINED]' ORDER BY 'DESC'";
@@ -234,6 +234,10 @@ class PageController extends Controller
         $month = $months_to_number[$month];
         $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}_{$month}___%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
 
+
+      }else if($type_of_leave == "All" && $year == "All" && $month == "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE approval_status = '$status' ORDER BY 'DESC'";
 
       }
 

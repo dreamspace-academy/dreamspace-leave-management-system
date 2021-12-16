@@ -63,6 +63,7 @@
               <label for="type_of_leave">Type of Leave</label>
 
               <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
+
                 <option value="All" selected >All</option>
                 <option value="Sick leave">Sick leave</option>
                 <option value="Casual leave">Casual leave</option>
@@ -214,8 +215,8 @@
 
               <select class="form-control" name = "status" id="status" aria-label="Default select example" required>
                 <option value="All" selected>All</option>
-                <option value="Sick leave">Accepted</option>
-                <option value="Sick leave">Declined</option>
+                <option value="[ACCEPTED]">Accepted</option>
+                <option value="[DECLINED]">Declined</option>
               </select>
 
             </div>
