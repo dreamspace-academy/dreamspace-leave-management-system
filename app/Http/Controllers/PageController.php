@@ -227,7 +227,7 @@ class PageController extends Controller
       $leave_data = DB::select($SqlCode); // SQL-CODE
 
 
-      return view("staff-dashboard-content/my-leave-history")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data]); //Send staff data with it.
+      return view("staff-dashboard-content/my-leave-history")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data, "filter_options" => ["type_of_leave" => "$type_of_leave", "year" => "$year", "month" => "$month", "status" => "$status"]]); //Send staff data with it.
 
 
     }else{
