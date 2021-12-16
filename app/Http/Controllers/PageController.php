@@ -19,9 +19,9 @@ class PageController extends Controller
        $session_type = Session::get('Session_Type');
        $session_value = Session::get('Session_Value');
 
-       $pending_data = DB::select("SELECT leave_data.*, staff_data.firstname, staff_data.lastname FROM leave_data, staff_data WHERE staff_data.staff_id = leave_data.staff_id AND leave_data.approval_status = '[PENDING]' ORDER BY leave_data.date_of_request ASC"); // SQL-CODE
-
        if($session_type == "Admin"){
+
+         $pending_data = DB::select("SELECT leave_data.*, staff_data.firstname, staff_data.lastname FROM leave_data, staff_data WHERE staff_data.staff_id = leave_data.staff_id AND leave_data.approval_status = '[PENDING]' ORDER BY leave_data.date_of_request ASC"); // SQL-CODE
 
          return view("admin-dashboard-content/home-page")->with("pending_data", $pending_data);
 
@@ -203,7 +203,26 @@ class PageController extends Controller
 
     if($session_type == "Staff"){
 
-      return $request;
+      $session_value = Session::get('Session_Value');
+
+      $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+      $SqlCode = "";
+
+      $type_of_leave =  $request->type_of_leave;
+      $year          =  $request->year;
+      $month         =  $request->month;
+      $status        =  $request->status;
+
+      if($type_of_leave == "All" && $year == "All" && $month == "All" && $status == "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE approval_status  = '[ACCEPTED]' OR approval_status = '[DECLINED]' ORDER BY 'DESC'";
+
+      }
+
+      $leave_data = DB::select($SqlCode); // SQL-CODE
+
+
+      return view("staff-dashboard-content/my-leave-history")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data]); //Send staff data with it.
 
 
     }else{

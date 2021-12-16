@@ -78,9 +78,9 @@
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="year_month">Year</label>
+              <label for="year">Year</label>
 
-              <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
+              <select class="form-control" name = "year" id="year" aria-label="Default select example" required>
 
                 <option selected>All</option>
                 <option value='2022'>2022</option>
