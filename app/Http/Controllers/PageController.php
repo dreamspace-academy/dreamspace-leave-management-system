@@ -226,6 +226,15 @@ class PageController extends Controller
 
         $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '{$year}______%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
 
+      }else if($type_of_leave == "All" && $year != "All" && $month != "All" && $status == "All"){
+
+
+        $months_to_number = array("January"=>"01", "February"=>"02", "March"=>"03", "April"=>"04", "May"=>"05", "June"=>"06", "July"=>"07", "August"=>"08", "September"=>"09", "October" => "10", "November" => "11", "December" => "12");
+
+        $month = $months_to_number[$month];
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}_{$month}___%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+
       }
 
       $leave_data = DB::select($SqlCode); // SQL-CODE
