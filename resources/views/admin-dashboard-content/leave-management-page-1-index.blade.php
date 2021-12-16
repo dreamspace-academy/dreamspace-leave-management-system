@@ -1,6 +1,6 @@
-@extends('staff-dashboard-layout.dashboard-template')
+@extends('admin-dashboard-layout.dashboard-template')
 
-@section('dashboard-staff-content')
+@section('dashboard-admin-content')
 
 
 @if($errors->any())

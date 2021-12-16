@@ -54,6 +54,8 @@ Route::get('/accept-request/{auto_id}',[DatabaseController::class, 'AcceptReques
 
 Route::get('/decline-request/{auto_id}',[DatabaseController::class, 'DeclineRequest']);
 
+Route::get('/view-leave-history',[PageController::class, 'ViewLeaveHistoryController']);
+
 
 Route::get('/view-home-page-of-staff-account',[PageController::class, 'ViewHomePageOfStaffAccountController']);
 
