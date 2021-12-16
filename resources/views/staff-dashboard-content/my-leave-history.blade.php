@@ -60,10 +60,10 @@
           <div class="form-row">
 
             <div class="col-md-4 mb-3">
-              <label for="staff_id">Type of Leave</label>
+              <label for="type_of_leave">Type of Leave</label>
 
               <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
-                <option selected>All</option>
+                <option value="All" selected >All</option>
                 <option value="Sick leave">Sick leave</option>
                 <option value="Casual leave">Casual leave</option>
                 <option value="Duty Leave">Duty Leave</option>
@@ -82,7 +82,7 @@
 
               <select class="form-control" name = "year" id="year" aria-label="Default select example" required>
 
-                <option selected>All</option>
+                <option value="All" selected>All</option>
                 <option value='2022'>2022</option>
                 <option value='2023'>2023</option>
                 <option value='2024'>2024</option>
@@ -191,7 +191,7 @@
               <label for="month">Month</label>
 
               <select class="form-control" name = "month" id="month" aria-label="Default select example" required>
-                <option selected>All</option>
+                <option value="All" selected>All</option>
                 <option value='January'>January</option>
                 <option value='February'>February</option>
                 <option value='March'>March</option>
@@ -212,7 +212,7 @@
               <label for="status">Status</label>
 
               <select class="form-control" name = "status" id="status" aria-label="Default select example" required>
-                <option selected>All</option>
+                <option value="All" selected>All</option>
                 <option value="Sick leave">Accepted</option>
                 <option value="Sick leave">Declined</option>
               </select>
@@ -266,8 +266,6 @@
     </div>
 </div>
 
-
-
 @endsection
 
 <script>
@@ -280,6 +278,14 @@
           return confirm('Are you sure to delete?');
       });
 
+
+
+      $('#type_of_leave').val("{{$filter_options['type_of_leave']}}");
+      $('#year').val("{{$filter_options['year']}}");
+      $('#month').val("{{$filter_options['month']}}");
+      $('#status').val("{{$filter_options['status']}}");
+
+      
     }
 
 </script>
