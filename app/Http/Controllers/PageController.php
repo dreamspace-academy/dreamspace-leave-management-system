@@ -257,6 +257,10 @@ class PageController extends Controller
 
         $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}_{$month}___%' AND approval_status = '$status' ORDER BY 'DESC'";
 
+      }else{
+
+        return redirect()->back()->withErrors("<strong>Wrong filter.</strong>");
+
       }
 
       $leave_data = DB::select($SqlCode); // SQL-CODE
