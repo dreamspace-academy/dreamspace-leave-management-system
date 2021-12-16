@@ -138,9 +138,11 @@ class PageController extends Controller
 
     if($session_type == "Admin"){
 
+      $staff_basic_data = DB::table('staff_data')->select("staff_id","firstname", "lastname")->get();
+
       $leave_data = DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
 
-      return view("admin-dashboard-content/leave-management-page-1-index")->with(["leave_data" => $leave_data, "filter_options" => ["staff_id" => "Select a staff","type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
+      return view("admin-dashboard-content/leave-management-page-1-index")->with(["staff_basic_data"=>$staff_basic_data,"leave_data" => $leave_data, "filter_options" => ["staff_id" => "Select a staff","type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
 
     }else{
 
@@ -149,6 +151,88 @@ class PageController extends Controller
     }
 
   }
+
+  public function FilterSearchLeaveHistoryController(Request $request){
+    $session_type = Session::get('Session_Type');
+
+    if($session_type == "Admin"){
+
+      $session_value = Session::get('Session_Value');
+
+      $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
+      $SqlCode = "";
+
+
+      $staff_id      =  $request->staff_id;
+      $type_of_leave =  $request->type_of_leave;
+      $year          =  $request->year;
+      $month         =  $request->month;
+      $status        =  $request->status;
+
+
+      if($type_of_leave == "All" && $year == "All" && $month == "All" && $status == "All" && $staff_id != ""){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE (approval_status  = '[ACCEPTED]' OR approval_status = '[DECLINED]') AND staff_id = '$staff_id' ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year == "All" && $month == "All" && $status == "All" && $staff_id != ""){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE type_of_leave = '$type_of_leave' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') AND staff_id = '$staff_id' ORDER BY 'DESC'";
+
+      }else if($type_of_leave == "All" && $year != "All" && $month == "All" && $status == "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '{$year}______%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+      }else if($type_of_leave == "All" && $year != "All" && $month != "All" && $status == "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}_{$month}___%' AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+      }else if($type_of_leave == "All" && $year == "All" && $month == "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE approval_status = '$status' ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year != "All" && $month == "All" && $status == "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE (date_of_leave LIKE '%{$year}______%' AND type_of_leave = '$type_of_leave') AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year != "All" && $month != "All" && $status == "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE (date_of_leave LIKE '%{$year}_{$month}___%' AND type_of_leave = '$type_of_leave') AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year != "All" && $month != "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE (date_of_leave LIKE '%{$year}_{$month}___%' AND type_of_leave = '$type_of_leave' AND approval_status = '$status') AND (approval_status = '[ACCEPTED]' OR approval_status = '[DECLINED]') ORDER BY 'DESC'";
+
+      }else if($type_of_leave != "All" && $year != "All" && $month == "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}______%' AND type_of_leave = '$type_of_leave' AND approval_status = '$status' ORDER BY 'DESC'";
+
+      }else if($type_of_leave == "All" && $year != "All" && $month == "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}______%' AND approval_status = '$status' ORDER BY 'DESC'";
+
+      }else if($type_of_leave == "All" && $year != "All" && $month != "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}_{$month}___%' AND approval_status = '$status' ORDER BY 'DESC'";
+
+      }else{
+
+        return redirect()->back()->withErrors("<strong>Wrong filter.</strong>");
+
+      }
+
+      $leave_data = DB::select($SqlCode); // SQL-CODE
+
+      $staff_basic_data = DB::table('staff_data')->select("staff_id","firstname", "lastname")->get();
+
+      return view("admin-dashboard-content/leave-management-page-1-index")->with(["staff_basic_data" =>$staff_basic_data,"leave_data" => $leave_data, "filter_options" => ["staff_id" => "Select a staff","type_of_leave" => "All", "year" => "All", "month" => "All", "status" => "All"]]); //Send staff data with it.
+
+
+    }else{
+
+      return Redirect::to("/");
+    }
+
+  }
+
 
 
 

@@ -55,7 +55,7 @@
         <h3 class="panel-title" style="text-align:center;">Search Filter</h3>
         <br>
 
-        <form action="/filter-search-leave-history-of-staff-account" method="POST">
+        <form action="/filter-search-leave-history-controller" method="POST">
           {{ csrf_field() }}
           <div class="form-row">
 
@@ -65,15 +65,9 @@
               <select class="form-control" name = "staff_id" id="staff_id" aria-label="Default select example" required>
 
                 <option value="Select a staff" selected disabled>Select a staff</option>
-                <option value="Sick leave">Sick leave</option>
-                <option value="Casual leave">Casual leave</option>
-                <option value="Duty Leave">Duty Leave</option>
-                <option value="Maternity leave">Maternity leave</option>
-                <option value="Paternity leave">Paternity leave</option>
-                <option value="Bereavement leave">Bereavement leave</option>
-                <option value="Compensatory leave">Compensatory leave</option>
-                <option value="Sabbatical leave">Sabbatical leave</option>
-                <option value="Unpaid Leave">Unpaid Leave</option>
+                @foreach ($staff_basic_data as $key => $data)
+                  <option value="{{$data->staff_id}}">{{$data->staff_id}} ({{$data->firstname}} {{$data->lastname}})</option>
+                @endforeach
 
               </select>
             </div>
