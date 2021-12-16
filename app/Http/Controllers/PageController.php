@@ -249,6 +249,10 @@ class PageController extends Controller
 
         $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}______%' AND type_of_leave = '$type_of_leave' AND approval_status = '$status' ORDER BY 'DESC'";
 
+      }else if($type_of_leave == "All" && $year != "All" && $month == "All" && $status != "All"){
+
+        $SqlCode = "SELECT * FROM leave_data WHERE date_of_leave LIKE '%{$year}______%' AND approval_status = '$status' ORDER BY 'DESC'";
+
       }
 
       $leave_data = DB::select($SqlCode); // SQL-CODE
