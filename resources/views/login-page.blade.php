@@ -7,13 +7,13 @@
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{{asset('login-template')}}/css/style.css">
+      <link rel="stylesheet" href="{{asset('login-template')}}/css/bootstrap.min.css">
    </head>
    <body>
-      <section class="ftco-section">
-         <div class="container">
-            <div class="row justify-content-center">
-
-              @if($errors->any())
+   <div class="container-fluid ">
+        <div class="container ">
+            <div class="row ">
+            @if($errors->any())
           			@foreach ($errors->all() as $error)
           					<div style="background-color:#FE6500;" id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
           							<strong style="color:white;">{!!$error!!}</strong>
@@ -34,47 +34,53 @@
 
           			@endforeach
           		@endif
+                <div class="col-sm-10 login-box">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 log-det">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img src="{{asset('login-template')}}/images/logo.png">
+                            </div>
+                            <h2 class="mb-3">Leave Management System <br> DreamSpace Academy</h2>
+                            <div class="text-box-cont mt-3">
+                            <form action="handle-login" method="POST" class="login-form">
+                              {{ csrf_field() }}
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="admin">
+                                    <label class="form-check-label" for="inlineRadio1">Admin Login</label>
+                                </div>
 
-               <div class="col-md-6 col-lg-4">
-                  <div class="login-wrap py-5" style="background-color: #FE6500;">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{asset('login-template')}}/images/logo.png);"></div>
-                     <h3 class="text-center mb-0">Welcome to</h3>
-                     <h5 class="text-center mb-0" style="color: white;">DreamSpace Academy</h5>
-                     <br/>
-
-                     <form action="handle-login" method="POST" class="login-form">
-
-                        {{ csrf_field() }}
-
-                        <div class="form-group">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                           <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="staff">
+                                    <label class="form-check-label" for="inlineRadio2">Staff Login</label>
+                                </div>
+                                <div class="input-group center mb-3">
+                                    <button type="submit" value="Login" class="btn btn-login btn-round">LOG IN</button>
+                                </div>
+                            </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                           <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                           <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <div class="col-lg-6 col-md-6 box-de">
+                            <div class="ditk-inf">
+                                <img src="{{asset('login-template')}}/images/login-cover.png">
+                            </div>
                         </div>
-                        <div style="text-align: center;">
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="admin">
-                              <label class="form-check-label" for="inlineRadio1" style="color:white; font-size:18px;">Admin Login</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="staff">
-                              <label class="form-check-label" for="inlineRadio2" style="color:white; font-size:18px;">Staff Login</label>
-                           </div>
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                           <input type="submit" value="Login" class="btn form-control btn-primary rounded submit px-3">
-                        </div>
-                     </form>
-
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
+        </div>
+    </div>
       <script src="{{asset('login-template')}}/js/jquery.min.js"></script>
       <script src="{{asset('login-template')}}/js/popper.js"></script>
       <script src="{{asset('login-template')}}/js/bootstrap.min.js"></script>
