@@ -9,27 +9,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --blue: #4e73df;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #e74a3b;
-  --orange: #fd7e14;
-  --yellow: #f6c23e;
-  --green: #1cc88a;
-  --teal: #20c9a6;
-  --cyan: #36b9cc;
   --white: #fff;
-  --gray: #858796;
-  --gray-dark: #5a5c69;
-  --primary: #4e73df;
-  --secondary: #858796;
-  --success: #1cc88a;
-  --info: #36b9cc;
-  --warning: #f6c23e;
-  --danger: #e74a3b;
-  --light: #f8f9fc;
-  --dark: #5a5c69;
+  --font: #707070;
+  --primary: #56509f;
+  --secondary: #FE6500;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -9278,6 +9261,8 @@ a:focus {
 .rotate-n-15 {
   transform: rotate(-15deg);
 }
+
+/*Dropdown*/
 .dropdown .dropdown-menu {
   font-size: 0.85rem;
 }
@@ -9437,15 +9422,18 @@ a:focus {
 .topbar.navbar-dark .navbar-nav .nav-item .nav-link:active {
   color: #fff;
 }
+/*Admin*/
 .topbar.navbar-light .navbar-nav .nav-item .nav-link {
-  color: #d1d3e2;
+  color: #707070;
 }
+/*
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
   color: #b7b9cc;
 }
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:active {
   color: #858796;
 }
+*/
 .sidebar {
   width: 6.5rem;
   min-height: 100vh;

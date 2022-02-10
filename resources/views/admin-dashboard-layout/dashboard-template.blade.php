@@ -99,7 +99,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav style="background-color:#FE6500 !important;"  class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -111,7 +111,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-3 d-none d-lg-inline" style="color: white; font-size: 18px; font-weight: bold;">Admin</span>
+                                <span class="mr-3 d-none d-lg-inline" style="font-size: 18px; font-weight: bold;">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('dashboard-template')}}/img/undraw_profile.svg">
                             </a>
