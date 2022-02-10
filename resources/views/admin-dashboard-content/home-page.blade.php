@@ -69,7 +69,7 @@
               <p class="card-text">{{$data->description}}</p>
 
               <a style="margin-left:10px;" class="btn btn-danger  float-right " href="/decline-request/{{$data->auto_id}}">Decline</a>
-              <a class="btn btn-success float-right" href="/accept-request/{{$data->auto_id}}">Accept</a>
+              <a class="btn btn-primary float-right" href="/accept-request/{{$data->auto_id}}">Accept</a>
 
             </div>
           </div>

@@ -95,7 +95,7 @@
         <div class="form-group row">
           <label style="visibility:hidden;" for="button" class="col-sm-2 col-form-label">button</label>
           <div class="col-sm-8">
-            <input class="btn btn-success col-md-2 col-sm-12" value="Submit" id="button" type="submit">
+            <input class="btn btn-primary col-md-2 col-sm-12" value="Submit" id="button" type="submit">
           </div>
         </div>
 

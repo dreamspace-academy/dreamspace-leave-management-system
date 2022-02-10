@@ -1739,7 +1739,7 @@ pre code {
   background-color: #fff;
   border-color: #bac8f3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .form-control::-webkit-input-placeholder {
   color: #858796;
@@ -1931,7 +1931,7 @@ textarea.form-control {
 .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
   border-color: #1cc88a;
-  box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .was-validated textarea.form-control:valid,
 textarea.form-control.is-valid {
@@ -1953,7 +1953,7 @@ textarea.form-control.is-valid {
 .custom-select.is-valid:focus,
 .was-validated .custom-select:valid:focus {
   border-color: #1cc88a;
-  box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .form-check-input.is-valid ~ .form-check-label,
 .was-validated .form-check-input:valid ~ .form-check-label {
@@ -1984,7 +1984,7 @@ textarea.form-control.is-valid {
 .was-validated
   .custom-control-input:valid:focus
   ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .custom-control-input.is-valid:focus:not(:checked)
   ~ .custom-control-label::before,
@@ -2000,7 +2000,7 @@ textarea.form-control.is-valid {
 .custom-file-input.is-valid:focus ~ .custom-file-label,
 .was-validated .custom-file-input:valid:focus ~ .custom-file-label {
   border-color: #1cc88a;
-  box-shadow: 0 0 0 0.2rem rgba(28, 200, 138, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .invalid-feedback {
   display: none;
@@ -2046,7 +2046,7 @@ textarea.form-control.is-valid {
 .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
   border-color: #e74a3b;
-  box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .was-validated textarea.form-control:invalid,
 textarea.form-control.is-invalid {
@@ -2068,7 +2068,7 @@ textarea.form-control.is-invalid {
 .custom-select.is-invalid:focus,
 .was-validated .custom-select:invalid:focus {
   border-color: #e74a3b;
-  box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .form-check-input.is-invalid ~ .form-check-label,
 .was-validated .form-check-input:invalid ~ .form-check-label {
@@ -2099,7 +2099,7 @@ textarea.form-control.is-invalid {
 .was-validated
   .custom-control-input:invalid:focus
   ~ .custom-control-label::before {
-  box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .custom-control-input.is-invalid:focus:not(:checked)
   ~ .custom-control-label::before,
@@ -2115,7 +2115,7 @@ textarea.form-control.is-invalid {
 .custom-file-input.is-invalid:focus ~ .custom-file-label,
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label {
   border-color: #e74a3b;
-  box-shadow: 0 0 0 0.2rem rgba(231, 74, 59, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .form-inline {
   display: flex;
@@ -2219,20 +2219,19 @@ fieldset:disabled a.btn {
 }
 .btn-primary {
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: var(--primary);
+  box-shadow: rgba(86, 80, 159, 0.16) 0px 1px 4px;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
+  background-color: var(--primary);
+  box-shadow: rgba(86, 80, 159, 0.16) 0px 1px 4px;
 }
 .btn-primary.focus,
 .btn-primary:focus {
   color: #fff;
-  background-color: #2e59d9;
-  border-color: #2653d4;
-  box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
+  background-color: var(--primary);
+  box-shadow: rgba(86, 80, 159, 0.16) 0px 1px 4px;
 }
 .btn-primary.disabled,
 .btn-primary:disabled {
@@ -2250,7 +2249,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
+  box-shadow: rgba(86, 80, 159, 0.16) 0px 1px 4px;
 }
 .btn-secondary {
   color: #fff;
@@ -6926,13 +6925,13 @@ button.bg-dark:hover {
   white-space: normal;
 }
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .shadow {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .shadow-none {
   box-shadow: none !important;
@@ -9464,7 +9463,7 @@ a:focus {
 }
 .sidebar .nav-item .collapse .collapse-inner {
   border-radius: 0.35rem;
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 .sidebar .nav-item .collapsing {
   display: none;
@@ -9672,7 +9671,7 @@ a:focus {
       opacity cubic-bezier(0, 1, 0.4, 1);
   }
   .sidebar.toggled .nav-item .collapse .collapse-inner {
-    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
     border-radius: 0.35rem;
   }
   .sidebar.toggled .nav-item .collapsing {
@@ -10303,10 +10302,12 @@ form.user .btn-user {
 footer.sticky-footer {
   padding: 2rem 0;
   flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 footer.sticky-footer .copyright {
   line-height: 1;
-  font-size: 0.8rem;
+  font-size:1rem;
 }
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;

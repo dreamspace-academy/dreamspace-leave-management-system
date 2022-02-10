@@ -135,10 +135,10 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer style="background-color:#FE6500 !important;" class="sticky-footer">
+            <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span style="color: white; font-size: 16px;">
+                        <span>
                             &copy; Copyright DreamSpace Academy | All rights reserved | Co-created by <a style="color:#56509f; font-weight:bold;" href="https://www.linkedin.com/in/gunarakulan-gunaretnam-161119156/" target="_blank">Gunarakulan</a>
                         </span>
                     </div>

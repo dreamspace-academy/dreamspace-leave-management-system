@@ -95,7 +95,7 @@
             </div>
 
           </div>
-          <input class="btn btn-lg btn-primary" value="Rigister" type="submit">
+          <input class="btn btn-lg btn-primary" value="Register" type="submit">
         </form>
 
       </div>
@@ -132,7 +132,7 @@
                         <td>{{$data->email}}</td>
                         <td>{{$data->phone_number}}</td>
                         <td>{{$data->position}}</td>
-                        <td><a class="btn btn-success" href="/view-staff-management-edit/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-staff-data/{{$data->auto_id}}">Delete</a></td>
+                        <td><a class="btn btn-primary" href="/view-staff-management-edit/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-staff-data/{{$data->auto_id}}">Delete</a></td>
                     </tr>
 
                 @endforeach

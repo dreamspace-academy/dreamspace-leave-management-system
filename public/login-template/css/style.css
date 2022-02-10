@@ -102,24 +102,24 @@ body {
 }
 
 .btn-login {
-  background-color: #FE6500;
-  border-color: #FE6500;
+  background-color: #56509f;
+  border-color: #56509f;
   color: #fff;
 }
 
 .btn-login:hover {
-  background-color: #FE6500 !important;
-  border-color: #FE6500 !important;
+  background-color: #56509f !important;
+  border-color: #56509f !important;
 }
 
 .btn-login:active {
-  background-color: #FE6500 !important;
-  border-color: #FE6500 !important;
+  background-color: #56509f !important;
+  border-color: #56509f !important;
 }
 
 .btn-login:focus {
-  background-color: #FE6500 !important;
-  border-color: #FE6500 !important;
+  background-color: #56509f !important;
+  border-color: #56509f !important;
   box-shadow: none !important;
 }
 
@@ -144,7 +144,7 @@ body {
 
 .form-control:focus {
   box-shadow: none;
-  border: 1px solid #FE6500 !important;
+  border: 1px solid #56509f !important;
 }
 
 .form-control {

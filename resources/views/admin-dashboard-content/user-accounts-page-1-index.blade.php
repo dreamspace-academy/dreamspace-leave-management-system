@@ -87,7 +87,7 @@
         <div class="form-group row">
           <label style="visibility:hidden;" for="button" class="col-sm-2 col-form-label">button</label>
           <div class="col-sm-8">
-            <input class="btn btn-success col-md-2 col-sm-12" value="Create" id="button" type="submit">
+            <input class="btn btn-primary col-md-2 col-sm-12" value="Create" id="button" type="submit">
           </div>
         </div>
 
@@ -118,7 +118,7 @@
                         <td>{{$data->staff_id}}</td>
                         <td>{{$data->username}}</td>
                         <td>{{$data->password}}</td>
-                        <td><a class="btn btn-success" href="/view-edit-user-account/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-user-account/{{$data->auto_id}}">Delete</a></td>
+                        <td><a class="btn btn-primary" href="/view-edit-user-account/{{$data->auto_id}}">Edit</a> <a class="btn btn-danger confirmation" href="/delete-user-account/{{$data->auto_id}}">Delete</a></td>
                     </tr>
 
                 @endforeach
