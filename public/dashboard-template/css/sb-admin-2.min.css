@@ -1719,7 +1719,6 @@ pre code {
   background-clip: padding-box;
   border: 1px solid #d1d3e2;
   border-radius: 0.35rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -1737,7 +1736,7 @@ pre code {
 .form-control:focus {
   color: #6e707e;
   background-color: #fff;
-  border-color: #bac8f3;
+  border-color: var(--primary);
   outline: 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
@@ -4731,8 +4730,8 @@ a.badge-dark:focus {
   color: #574516;
 }
 .alert-danger {
-  color: #78261f;
-  background-color: #fadbd8;
+  color: #FE6500;
+  background-color: #FE6500;
   border-color: #f8ccc8;
 }
 .alert-danger hr {
@@ -5137,7 +5136,7 @@ a.badge-dark:focus {
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
+  opacity: 1;
 }
 .close:hover {
   color: #000;
@@ -5145,7 +5144,7 @@ a.badge-dark:focus {
 }
 .close:not(:disabled):not(.disabled):focus,
 .close:not(:disabled):not(.disabled):hover {
-  opacity: 0.75;
+  opacity: 1;
 }
 button.close {
   padding: 0;
@@ -10300,6 +10299,7 @@ form.user .btn-user {
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
 footer.sticky-footer {
+  margin: 2rem 0 0 0;
   padding: 2rem 0;
   flex-shrink: 0;
   background-color: #fff;

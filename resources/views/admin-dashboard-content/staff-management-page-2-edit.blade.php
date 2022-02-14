@@ -4,7 +4,7 @@
 
 @if($errors->any())
   @foreach ($errors->all() as $error)
-      <div style="background-color:#FE6500;" id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
+      <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
           <strong style="color:white;">{!!$error!!}</strong>
           <button type="button" style="color:white;" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" style="color:white;" >&times;</span>
