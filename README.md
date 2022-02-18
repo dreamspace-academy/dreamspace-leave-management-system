@@ -1,6 +1,6 @@
 # DreamSpace Leave Management System
 
-![](github-readme-content/banner-image.jpg)  
+![](github-readme-content/banner-image-new.jpg)  
 
 
 ## Introduction
@@ -55,7 +55,7 @@ This leave management system has two types of accounts those are admin login and
 - Staff login
 - Login error popup messages
 
-![](github-readme-content/login-page.jpg)
+![](github-readme-content/login-page-new.jpg)
 
 ### Admin - Dashboard
 
