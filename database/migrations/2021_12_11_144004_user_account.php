@@ -23,6 +23,15 @@ class UserAccount extends Migration
 
       });
 
+      // Insert some stuff
+      DB::table('user_account')->insert(
+         array(
+             'staff_id' => "00001",
+             'username' => "admin",
+             'password' => "admin123",
+             'account_type' => "admin"
+         )
+      );
 
     }
 
